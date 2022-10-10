@@ -1,20 +1,26 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-
+import loginPO from '../features/loginPO/loginPO.cy.js';
+import adminnavigatePO from '../features/adminnavigatePO/adminnavigatePO.cy.js';
+const login=new loginPO();
+const adminNavigate=new adminnavigatePO();
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
     return false
   })
+
+
 Given('I logged in as Admin',()=>{
-    cy.visit('http://localhost/college/login/loginadmin.php');
-    cy.get('.inputUsername',{timeout:300}).type('admin@school.com');
-    cy.get('.inputPassword',{timeout:300}).type('admin123');
-    cy.get('.login-submitButton',{wait:3000}).click();
+    login.getUrl();
+    login.getUsername();
+    login.getPassword();
+    login.loginbuttonClick();
+    login.assertLogin();
 });
 When('I click the link, {string}',async(link)=>{
-    cy.contains(link,{timeout:300}).click();
+    adminNavigate.getLink(link);
 });
 
 Then('I should be navigated to the page successfully, {string}',async(url)=>{
-    cy.url().should('eq', url)
+    adminNavigate.assertUrl(url);
 })
