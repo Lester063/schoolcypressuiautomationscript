@@ -14,6 +14,7 @@ class AdminStudent{
         cy.get('#put_firstname',{timeout:300}).clear().type('Edreeeeen Maeee');
         cy.get('#put_lastname',{timeout:300}).clear().type('Paynadoooo');
     }
+    /*
     assertText(text,display){
         if(display=='visible'){
             cy.contains(text,{timeout:300}).should('be.visible')
@@ -35,6 +36,7 @@ class AdminStudent{
         cy.get(identifier,{timeout:300}).type(data);
         cy.wait(300);
     }
+    */
 
 }
 

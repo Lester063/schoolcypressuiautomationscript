@@ -20,8 +20,8 @@ Then the student data should be update successfully
 
 #deactivate the student
 Given I am in the student page
-When I search the student I created
-And I click the activated button
+And I search the student I created
+When I click the activated button
 Then the student should be deactivated
 
 #Should be able to search and delete the student I created

@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import loginPO from '../features/loginPO/loginPO.cy.js';
+import loginPO from '../../page_objects/loginPO.cy.js';
 
 const login=new loginPO();
 Cypress.on('uncaught:exception', (err, runnable) => {

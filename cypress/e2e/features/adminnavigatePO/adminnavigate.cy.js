@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import loginPO from '../features/loginPO/loginPO.cy.js';
-import adminnavigatePO from '../features/adminnavigatePO/adminnavigatePO.cy.js';
+import loginPO from '../../page_objects/loginPO.cy.js';
+import adminnavigatePO from '../../page_objects/adminnavigatePO.cy.js';
 const login=new loginPO();
 const adminNavigate=new adminnavigatePO();
 Cypress.on('uncaught:exception', (err, runnable) => {
