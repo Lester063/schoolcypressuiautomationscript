@@ -1,8 +1,13 @@
+import { school } from "../../../schoolpageobject.js"
 class SubjectCourse{
     addsubjectDetails(){
-        cy.get('#newSubject',{timeout:300}).type('this is new');
-        cy.get('#subjectCode',{timeout:300}).type('code');
-        cy.get('#description',{timeout:300}).type('description');
+        cy.get(school.newSubject,{timeout:300}).type(school.newsubjectInput);
+        cy.get(school.subjectCode,{timeout:300}).type(school.subjectcodeInput);
+        cy.get(school.subjectDescription,{timeout:300}).type(school.subjectdescriptionInput);
+    }
+    addcourseDetails(){
+        cy.get(school.newCourse,{timeout:300}).type(school.newcourseInput);
+        cy.get(school.courseDescription,{timeout:300}).type(school.coursedescriptionInput);
     }
 }
 

@@ -1,6 +1,8 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import loginPO from '../../page_objects/loginPO.cy.js';
 import adminnavigatePO from '../../page_objects/adminnavigatePO.cy.js';
+import globalobjects from '../../page_objects/globalObjects.cy.js';
+const globalobject = new globalobjects();
 const login=new loginPO();
 const adminNavigate=new adminnavigatePO();
 Cypress.on('uncaught:exception', (err, runnable) => {
@@ -11,12 +13,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 
 Given('I logged in as Admin',()=>{
-    login.getUrl();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
-    login.assertLogin();
+    globalobject.assertText('Lester','visible');
 });
+
 When('I click the link, {string}',async(link)=>{
     adminNavigate.getLink(link);
 });

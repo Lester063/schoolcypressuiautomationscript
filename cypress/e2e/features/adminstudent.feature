@@ -10,6 +10,8 @@ And I click the create button
 Then the account should be created successfully
 
 #update student data
+Scenario: Should be able to update student data
+
 Given I am in the student page
 And I search the student I created
 And I click the Edit Data button
@@ -19,12 +21,16 @@ And I close the modal box
 Then the student data should be update successfully
 
 #deactivate the student
+Scenario: Should be able to deactivate student account
+
 Given I am in the student page
 And I search the student I created
 When I click the activated button
 Then the student should be deactivated
 
 #Should be able to search and delete the student I created
+Scenario: Should be able to search and delete the student I created
+
 Given I am in the student page
 When I search for the student
 And I delete the student

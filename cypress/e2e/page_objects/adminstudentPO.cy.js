@@ -1,18 +1,19 @@
+import { school } from "../../../schoolpageobject.js"
 class AdminStudent{
     gotoPage(namePage){
         cy.contains(namePage,{timeout:300}).click();
     }
     enterstudentDetails(){
-        cy.get('#firstname',{timeout:300,force: true}).type('Edddreeeen');
-        cy.get('#middlename',{timeout:300}).type('D');
-        cy.get('#lastname',{timeout:300}).type('Paynadoo');
-        cy.get('#course').select('ABM');
-        cy.get('#contact_number',{timeout:300}).type('09212483577');
-        cy.get('#year').select('11');
+        cy.get(school.firstName,{timeout:300,force: true}).type('Edddreeeen');
+        cy.get(school.middleName,{timeout:300}).type('D');
+        cy.get(school.lastName,{timeout:300}).type('Paynadoo');
+        cy.get(school.course).select('ABM');
+        cy.get(school.contactNumber,{timeout:300}).type('09212483577');
+        cy.get(school.year).select('11');
     }
     newdatastudent(){
-        cy.get('#put_firstname',{timeout:300}).clear().type('Edreeeeen Maeee');
-        cy.get('#put_lastname',{timeout:300}).clear().type('Paynadoooo');
+        cy.get(school.newfirstname,{timeout:300}).clear().type('Edreeeeen Maeee');
+        cy.get(school.newlastname,{timeout:300}).clear().type('Paynadoooo');
     }
     /*
     assertText(text,display){

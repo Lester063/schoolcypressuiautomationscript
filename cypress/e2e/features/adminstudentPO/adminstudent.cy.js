@@ -2,6 +2,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import loginPO from '../../page_objects/loginPO.cy.js';
 import admin_studentPO from '../../page_objects/adminstudentPO.cy.js';
 import globalobjects from '../../page_objects/globalObjects.cy.js';
+import { school } from "../../../../schoolpageobject.js"
 const globalobject = new globalobjects();
 const adminstudent=new admin_studentPO();
 const login=new loginPO();
@@ -22,56 +23,57 @@ Given('I am logged in as an Admin',()=>{
     login.assertLogin();
 });
 Given('I navigate to VIEW STUDENT > Add Student',()=>{
-    adminstudent.gotoPage('VIEW STUDENTS');
-    globalobject.clickButton('Add Student','text')
+    adminstudent.gotoPage(school.navbarlink.viewStudent);
+    globalobject.clickButton(school.addStudent,'text')
 });
 
 When('I enter the details of student',()=>{
     adminstudent.enterstudentDetails();
 });
 When('I click the create button',()=>{
-    globalobject.clickButton('#addbutton','!text')
+    globalobject.clickButton(school.addButton,'!text')
 });
 Then('the account should be created successfully',()=>{
     globalobject.assertText('Admin Contact #','visible');
 });
 //update student data
 Given('I am in the student page',()=>{
-    adminstudent.gotoPage('VIEW STUDENTS');
+    adminstudent.gotoPage(school.navbarlink.viewStudent);
+    globalobject.assertText('VIEW STUDENT','visible');
 });
 Given('I search the student I created',()=>{
-    globalobject.search('#searchStudent','Paynadoo');
+    globalobject.search(school.searchField,'Paynadoo');
 })
 Given('I click the Edit Data button',()=>{
-    globalobject.clickButton('.editbutton','!text');
+    globalobject.clickButton(school.editButton,'!text');
 });
 When('I entered new data of the student',()=>{
     adminstudent.newdatastudent();
 });
 When('I click the update button',()=>{
-    globalobject.clickButton('#submitbutton-editstudent','!text');
+    globalobject.clickButton(school.submiteditButton,'!text');
 });
 When('I close the modal box',()=>{
-    globalobject.clickButton('.closebutton-addstudent','!text');
+    globalobject.clickButton(school.modalcloseButton,'!text');
 });
 Then('the student data should be update successfully',()=>{
     globalobject.assertText('Edreeeeen Maeee','visible');
 });
 //deactivate the student
 When('I click the activated button',()=>{
-    globalobject.clickButton('ACTIVATED','text');
+    globalobject.clickButton(school.activatedText,'text');
 });
 Then('the student should be deactivated',()=>{
-    globalobject.assertText('DEACTIVATED','visible')
+    globalobject.assertText(school.deactivatedText,'visible')
 });
 //Should be able to search and delete the student I created
 When('I search for the student',()=>{
-    globalobject.search('#searchStudent','Paynadoooo');
+    globalobject.search(school.searchField,'Paynadoooo');
 });
 When('I delete the student',()=>{
-    globalobject.clickButton('Delete','text');
+    globalobject.clickButton(school.deleteText,'text');
 });
 Then('the student should be deleted successfully',()=>{
-    globalobject.assertText('Edreeeeen Maeee','notvisible');
+    globalobject.assertText('Paynadoooo','notvisible');
 });
 

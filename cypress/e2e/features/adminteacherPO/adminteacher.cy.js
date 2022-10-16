@@ -11,12 +11,14 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
 });
+/*
 before(function(){
     login.getUrl();
     login.getUsername();
     login.getPassword();
     login.loginbuttonClick();
 })
+*/
 //navigate to view teacher page
 Given('I logged in as an Admin',()=>{
     globalobject.assertText('Lester','visible');
