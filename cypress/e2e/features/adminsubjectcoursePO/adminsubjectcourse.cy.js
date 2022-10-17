@@ -12,17 +12,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 });
 
-beforeEach(function(){
-    login.getUrl();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
-})
+
 /*
 Given('I am logged in as an Admin',()=>{
     globalobject.assertText('Lester','visible');
-});
-*/
+});*/
+
 Given('I navigate SUBJECT > VIEW SUBJECT',()=>{
     globalobject.clickButton(school.navbarlink.subjectCourse,'text');
     globalobject.clickButton(school.navbarlink.viewSubject,'text');

@@ -20,6 +20,11 @@ class GlobalObjects{
         cy.get(identifier,{timeout:300}).type(data);
         cy.wait(300);
     }
+    /*this select option is applied when there are multiple
+    select option with the same identifier*/
+    selectOption(identifier,elNumber,value){
+        cy.get(identifier,{timeout:300}).eq(elNumber).select(value,{timeout:300});
+    }
 }
 
 export default GlobalObjects

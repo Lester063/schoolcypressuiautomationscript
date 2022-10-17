@@ -17,7 +17,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 });
 //value of subjects --value are the id of each subject
-subjects = ['walato','78','79','80','81'],
+subjects = ['walato','78','79','80','81'];
 
 /*
 Given('I am logged in as an Admin',()=>{
@@ -28,36 +28,30 @@ Given('I navigated to VIEW SECTIONS',()=>{
     globalobject.clickButton(school.navbarlink.viewSection,'text');
 });
 Given('I click the Add Section button',()=>{
-    globalobject.clickButton(school.addsectionmodalTrigger,'!text');
+    adminSection.openaddsectionModal();
 });
 When('I add three subject selection',()=>{
-    for(i=0;i<3;i++){
-        globalobject.clickButton(school.addselectSection,'!text');
-    }
+    adminSection.addsubjectselectOption();
 });
 When('I choose a year and section',()=>{
-    adminSection.selectOption(school.gradeyear,0,'11');
-    adminSection.selectOption(school.section,0,'A');
+    adminSection.selectyearSection();
 });
 When('I select subjects',()=>{
-   for(xy=1;xy<=4;xy++){
-        adminSection.selectOption(school.selectsubject,xy,subjects[xy])
-   }
+    adminSection.selectSubject();
 });
 When('I select course',()=>{
-    adminSection.selectOption(school.selectcourse,0,'ABM');
+    adminSection.selectCourse();
 });
 When('I entered maximum numbers',()=>{
-    cy.get(school.maxstudentSection).type('3');
+    adminSection.entermaxstudentNumber();
 });
 When('I choose start and end date of section to be available in enrollment',()=>{
     //globalobject.clickButton(school.start_date,'!text');
-    cy.get(school.start_date).click().type('2022-10-16T08:30')
-    cy.get(school.end_date).click().type('2022-10-16T20:30')
+    adminSection.start_end();
 });
 When('I click ADD SECTION button',()=>{
-    globalobject.clickButton(school.addsectionButton,'!text');
+    adminSection.addsectionButton();
 });
 Then('the section should be created successfully',()=>{
-    globalobject.assertText('Created Section Successfully.','visible');
-})
+    adminSection.assertsectionCreated();
+});

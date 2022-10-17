@@ -13,15 +13,31 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   });
-  
+/*
+beforeEach(function(){
+    login.getUrl();
+    login.getUsername();
+    login.getPassword();
+    login.loginbuttonClick();
+})
+*/
 //Should be able to create student account
+/*
+beforeEach(function(){
+    login.getUrl();
+    login.getUsername();
+    login.getPassword();
+    login.loginbuttonClick();
+});
+*/
 Given('I am logged in as an Admin',()=>{
     login.getUrl();
     login.getUsername();
     login.getPassword();
     login.loginbuttonClick();
-    login.assertLogin();
+    globalobject.assertText('Lester','visible');
 });
+
 Given('I navigate to VIEW STUDENT > Add Student',()=>{
     adminstudent.gotoPage(school.navbarlink.viewStudent);
     globalobject.clickButton(school.addStudent,'text')
@@ -38,7 +54,7 @@ Then('the account should be created successfully',()=>{
 });
 //update student data
 Given('I am in the student page',()=>{
-    adminstudent.gotoPage(school.navbarlink.viewStudent);
+    globalobject.clickButton('VIEW STUDENTS','text');
     globalobject.assertText('VIEW STUDENT','visible');
 });
 Given('I search the student I created',()=>{
