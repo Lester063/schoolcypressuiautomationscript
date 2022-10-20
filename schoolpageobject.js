@@ -1,7 +1,7 @@
 export const school = {
     navbarlink:{
         viewStudent:"VIEW STUDENTS",
-        viewTeacher:"VIEW TEACHERS",
+        viewTeacher:"VIEW TEACHERS", addTeacher:"Add Teacher",
         subjectCourse:"SUBJECT/COURSE",
             viewSubject:"VIEW SUBJECT",
             viewCourse:"VIEW COURSE",
@@ -63,4 +63,25 @@ export const school = {
     start_date:"#start_date",
     end_date:"#end_date",
     addsectionButton:"#addsectionbutton",
+
+
+    //adminteacher
+    teacherFirstname:"#teacher_firstname",
+    teacherMiddlename:"#teacher_middlename",
+    teacherLastname:"#teacher_lastname",
+    teacherContactnumber:"#teacher_contactnumber",
+    teacherUserlevel:"#teacher_userlevel",
+    teacherDepartment:"#teacher_department",
+    teacherRank:"#teacher_rank",
+    //when editing teacher details -only the last name
+    teacherlastnameEdit:"#put_teacher_lastname",
+    teacheraddButton:"#addTeacher",
+    teachereditButton:".editteacher",
+    // ---kulang yung teacher
+
+
+    //adminsection
+    editsectionbutton:".editsectionbutton",
+    editsectionQty:"#editsection_qty",
+    goEditButton:".bluewhiteButton",
 }

@@ -3,6 +3,7 @@ import globalobjects from '../page_objects/globalObjects.cy.js';
 const globalobject = new globalobjects();
 subjects = ['walato','78','79','80','81'];
 class Section{
+    //till assertsectionCreated -line 41 ==create section
     openaddsectionModal(){
         globalobject.clickButton(school.addsectionmodalTrigger,'!text');
     }
@@ -39,6 +40,53 @@ class Section{
     }
     assertsectionCreated(){
         globalobject.assertText('Created Section Successfully.','visible');
+    }
+
+
+    //update the maximum numbers into 5
+    editsectionModal(){
+        cy.get(school.editsectionbutton,{timeout:300}).click();
+    }
+    entersectionNewdata(){
+        cy.get(school.editsectionQty,{timeout:300}).clear().type('5');
+    }
+    goEditButton(){
+        cy.contains('UPDATE',{timeout:300}).click();
+    }
+    closeModal(){
+        //cy.get('',{timeout:300}).click();
+        cy.reload()
+    }
+    assertnewsectionData(){
+        globalobject.assertText('0/5','visible');
+    }
+
+
+    //open the View Student List page of that section
+    assertExistingsection(){
+        cy.contains('SY: 2022-2023').should('be.visible');
+    }
+    viewstudentLink(){
+        cy.get('a[href*="viewenrolledList.php?section_id"]',{timeout:300}).click();
+    }
+    assertviewstudentPage(){
+        cy.contains('ADMIN: ENROLL STUDENTS',{timeout:300}).should('be.visible');
+    }
+
+    //open the assign teachers page of that section
+    assignteachersLink(){
+        cy.get('a[href*="assignteacher_newversion.php?section_id"]',{timeout:300}).click();
+    }
+    assertassignteacherPage(){
+        cy.contains('Assign Teacher',{timeout:300}).should('be.visible');
+    }
+
+    //delete the section
+    deletesectionButton(){
+        cy.contains(school.deleteText,{timeout:300}).click();
+    }
+    assertsectionDeleted(){
+        cy.contains('Deleted Section Successfully.').should('be.visible');
     }
 }
 

@@ -47,7 +47,7 @@ When('I enter the details of student',()=>{
     adminstudent.enterstudentDetails();
 });
 When('I click the create button',()=>{
-    globalobject.clickButton(school.addButton,'!text')
+    adminstudent.addstudentButton();
 });
 Then('the account should be created successfully',()=>{
     globalobject.assertText('Admin Contact #','visible');
@@ -68,10 +68,10 @@ When('I entered new data of the student',()=>{
 });
 When('I click the update button',()=>{
     globalobject.clickButton(school.submiteditButton,'!text');
-});
+});/*
 When('I close the modal box',()=>{
     globalobject.clickButton(school.modalcloseButton,'!text');
-});
+});*/
 Then('the student data should be update successfully',()=>{
     globalobject.assertText('Edreeeeen Maeee','visible');
 });

@@ -1,6 +1,7 @@
 import { school } from "../../../schoolpageobject.js"
 class AdminStudent{
     gotoPage(namePage){
+        //go to page by clicking the button -namePage
         cy.contains(namePage,{timeout:300}).click();
     }
     enterstudentDetails(){
@@ -11,33 +12,14 @@ class AdminStudent{
         cy.get(school.contactNumber,{timeout:300}).type('09212483577');
         cy.get(school.year).select('11');
     }
+    addstudentButton(){
+        cy.get(school.addButton,{timeout:300}).click();
+    }
     newdatastudent(){
         cy.get(school.newfirstname,{timeout:300}).clear().type('Edreeeeen Maeee');
         cy.get(school.newlastname,{timeout:300}).clear().type('Paynadoooo');
     }
-    /*
-    assertText(text,display){
-        if(display=='visible'){
-            cy.contains(text,{timeout:300}).should('be.visible')
-        }
-        else if(display=='notvisible'){
-            cy.contains(text,{timeout:300}).should('not.visible')
-        }
-    }
-    clickButton(identifier,type){
-        if(type=='text'){
-            cy.contains(identifier,{timeout:300}).click();
-        }
-        else{
-            cy.get(identifier,{timeout:300}).click();
-        }
-        
-    }
-    search(identifier,data){
-        cy.get(identifier,{timeout:300}).type(data);
-        cy.wait(300);
-    }
-    */
+
 
 }
 

@@ -9,6 +9,7 @@ class SubjectCourse{
         cy.get(school.newCourse,{timeout:300}).type(school.newcourseInput);
         cy.get(school.courseDescription,{timeout:300}).type(school.coursedescriptionInput);
     }
+    
 }
 
 export default SubjectCourse

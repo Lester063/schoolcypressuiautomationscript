@@ -12,6 +12,7 @@ Scenario: Should be able to create teacher
 Given I am logged in as an Admin
 And I navigated to VIEW TEACHERS > Add Teacher
 When I entered the details of teacher
+And I click the add teacher button
 Then the teacher account should be created successfully
 
 Scenario: Should be able to update the data of teacher I created

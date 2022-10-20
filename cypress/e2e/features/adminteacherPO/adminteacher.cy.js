@@ -26,12 +26,13 @@ Then('I should be navigated to view teachers page successfully',()=>{
 
 //create teacher
 When('I navigated to VIEW TEACHERS > Add Teacher',()=>{
-    globalobject.clickButton('VIEW TEACHERS','text');
-    globalobject.clickButton('Add Teacher','text');
+    adminteacher.createteacherPage();
 });
 When('I entered the details of teacher',()=>{
     adminteacher.enterteacherDetails();
-    globalobject.clickButton('#addTeacher','!text');
+});
+When('I click the add teacher button',()=>{
+    adminteacher.addteacherButton();
 });
 Then('the teacher account should be created successfully',()=>{
     globalobject.assertText('09212483577','visible');

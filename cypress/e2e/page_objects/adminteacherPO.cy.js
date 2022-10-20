@@ -1,15 +1,25 @@
+import { school } from "../../../schoolpageobject.js"
 class Adminteacher{
-    enterteacherDetails(){
-        cy.get('#teacher_firstname',{timeout:300}).type('Erica');
-        cy.get('#teacher_middlename',{timeout:300}).type('Tuazon');
-        cy.get('#teacher_lastname',{timeout:300}).type('Ventura');
-        cy.get('#teacher_contactnumber',{timeout:300}).type('09212483577');
-        cy.get('#teacher_userlevel',{timeout:300}).select('TEACHER');
-        cy.get('#teacher_department',{timeout:300}).select('math');
-        cy.get('#teacher_rank',{timeout:300}).select('teacher1');
+    //create teacher
+    createteacherPage(){
+        cy.contains(school.navbarlink.viewTeacher,{timeout:300}).click();
+        cy.contains(school.navbarlink.addTeacher,{timeout:300}).click();
     }
+    enterteacherDetails(){
+        cy.get(school.teacherFirstname,{timeout:300}).type('Erica');
+        cy.get(school.teacherMiddlename,{timeout:300}).type('Tuazon');
+        cy.get(school.teacherLastname,{timeout:300}).type('Ventura');
+        cy.get(school.teacherContactnumber,{timeout:300}).type('09212483577');
+        cy.get(school.teacherUserlevel,{timeout:300}).select('TEACHER');
+        cy.get(school.teacherDepartment,{timeout:300}).select('math');
+        cy.get(school.teacherRank,{timeout:300}).select('teacher1');
+    }
+    addteacherButton(){
+        cy.get(school.teacheraddButton,{timeout:300}).click();
+    }
+    //edit -the data
     newteacherdetails(){
-        cy.get('#put_teacher_lastname',{timeout:300}).type('Venturaaa');
+        cy.get(school.teacherlastnameEdit,{timeout:300}).type('Venturaaa');
     }
 }
 
