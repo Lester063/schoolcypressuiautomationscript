@@ -3,7 +3,7 @@ Feature: Navigate to pages
 
 Scenario Outline: Should be able to navigate to other pages
 
-Given I logged in as Admin
+Given I am logged in as an Admin
 When I click the link, '<link>'
 Then I should be navigated to the page successfully, '<url>'
 

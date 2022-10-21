@@ -6,7 +6,7 @@ export const school = {
             viewSubject:"VIEW SUBJECT",
             viewCourse:"VIEW COURSE",
         viewSection:"VIEW SECTIONS",
-        viewEnrolled:"VIEW ENROLELD",
+        viewEnrolled:"VIEW ENROLLED",
         addNews:"ADD NEWS"
     },
     //planning to make it global

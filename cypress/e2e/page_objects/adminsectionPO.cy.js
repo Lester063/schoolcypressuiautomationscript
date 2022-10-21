@@ -26,14 +26,14 @@ class Section{
        }
     }
     selectCourse(){
-        globalobject.selectOption(school.selectcourse,0,'ABM');
+        globalobject.selectOption(school.selectcourse,0,'ICT');
     }
     entermaxstudentNumber(){
         cy.get(school.maxstudentSection).type('3');
     }
     start_end(){
         cy.get(school.start_date).click().type('2022-10-16T08:30');
-        cy.get(school.end_date).click().type('2022-10-16T20:30');
+        cy.get(school.end_date).click().type('2022-10-30T20:30');
     }
     addsectionButton(){
         globalobject.clickButton(school.addsectionButton,'!text');
