@@ -1,4 +1,13 @@
 export const school = {
+    adminpageUrl:"http://localhost/college/login/loginpage.php",
+    //student logged in
+    studentUsername:".inputUsername",
+    studentPassword:".inputPassword",
+    studentloginButton:".login-submitButton",
+    studentnavbar:{
+        enrollment:"ENROLLMENT"
+    },
+
     navbarlink:{
         viewStudent:"VIEW STUDENTS",
         viewTeacher:"VIEW TEACHERS", addTeacher:"Add Teacher",
@@ -84,4 +93,16 @@ export const school = {
     editsectionbutton:".editsectionbutton",
     editsectionQty:"#editsection_qty",
     goEditButton:".bluewhiteButton",
+
+    selectAdviser:"[name='adviser_id']",
+    selectTeacher:"[name='teacher[]']",
+    assignteacherButton:"#new_assignTeachers > .bluewhiteButton",
+    
+    //adminenrolled
+    //student enrolling
+    clickSection:"#section_id",
+    clickEnrollbutton:"#enrollbutton",
+    textPending:"PENDING",
+    textApproved:"APPROVED",
+    approveStudent:".approved",
 }

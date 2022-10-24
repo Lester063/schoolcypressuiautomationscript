@@ -1,12 +1,9 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { school } from "../../../../schoolpageobject.js";
-import loginPO from '../../page_objects/loginPO.cy.js';
-import admin_studentPO from '../../page_objects/adminstudentPO.cy.js';
 import globalobjects from '../../page_objects/globalObjects.cy.js';
 import adminsectionPO from '../../page_objects/adminsectionPO.cy.js';
 const globalobject = new globalobjects();
-const adminstudent=new admin_studentPO();
-const login=new loginPO();
+
 
 const adminSection = new adminsectionPO();
 
