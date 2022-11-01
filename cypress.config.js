@@ -21,6 +21,7 @@ const createEsbuildPlugin =
         specPattern: "cypress/e2e/features/*.feature",
         baseUrl: "https://www.saucedemo.com",
         chromeWebSecurity: false,
+        scrollBehavior: false
     },
     });
     

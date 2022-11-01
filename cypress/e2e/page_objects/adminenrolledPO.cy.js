@@ -63,7 +63,9 @@ class Enrolled{
         cy.get('a[href*="viewstudent_enrolledsubject.php?student_number"]',{timeout:300}).click();
     }
     dropSubject(){
-        cy.get(school.redblackButton,{timeout:300, force:true}).last().click();
+        for(var x=0;x<=3;x++){
+            cy.get('.redblackButton',{scrollBehavior: false,force:true}).eq(x).click();
+        }
     }
     assertDropsubject(){
         cy.reload();
@@ -72,7 +74,9 @@ class Enrolled{
 
     //add back the subject
     addagainSubject(){
-        cy.contains('ADD AGAIN',{timeout:300, force:true}).last().click();
+        for(var y=0;y<=3;y++){
+            cy.get(school.bluewhiteButton,{scrollBehavior: false,force:true}).eq(y).click();
+        }
     }
     assertAddbacksubject(){
         cy.reload();
