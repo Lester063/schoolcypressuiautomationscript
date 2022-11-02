@@ -23,13 +23,13 @@ class Enrolled{
         cy.reload();
         adminSection.assignteachersLink();
         cy.get(school.selectAdviser,{timeout:300}).select('71');
-        cy.get(school.selectTeacher,{timeout:300}).eq(0).select('72');
+        cy.get(school.selectTeacher,{timeout:300}).eq(0).select('71');
         cy.get(school.selectTeacher,{timeout:300}).eq(1).select('73');
         cy.get(school.selectTeacher,{timeout:300}).eq(2).select('74');
         cy.get(school.selectTeacher,{timeout:300}).eq(3).select('75');
         cy.get(school.assignteacherButton,{timeout:300}).click();
     
-        cy.visit(school.adminpageUrl);
+        cy.visit(school.studentpageUrl);
         cy.get(school.studentUsername,{timeout:300}).type('l.tuazon232@school.com');
         cy.get(school.studentPassword,{timeout:300}).type('qwerty123');
         cy.get(school.studentloginButton,{timeout:3000}).click();

@@ -1,11 +1,16 @@
 export const school = {
-    adminpageUrl:"http://localhost/college/login/loginpage.php",
+    studentpageUrl:"http://localhost/college/login/loginpage.php",
     //student logged in
     studentUsername:".inputUsername",
     studentPassword:".inputPassword",
     studentloginButton:".login-submitButton",
     studentnavbar:{
-        enrollment:"ENROLLMENT"
+        enrollment:"ENROLLMENT",
+        viewRegistration:"MY REGISTRATION",
+    },
+    teachernavbar:{
+        myAdvisory:"MY ADVISORY",
+        sectionHandle:"Section Handle",
     },
 
     navbarlink:{
@@ -105,4 +110,24 @@ export const school = {
     textPending:"PENDING",
     textApproved:"APPROVED",
     approveStudent:".approved",
+
+
+    //student page
+    //student login page
+    inputstudentEmail:"#studentEmail",
+    inputstudentPassword:"#studentPassword",
+    selectsection:"#section_id",
+    enrollbutton:"#enrollbutton",
+    enrollmentMessage:"#enrollment-message",
+
+    //viewregistration
+    registrationToggle:".syTitle",
+
+
+    //teacher
+    teacherEmail:"#teacherEmail",
+    teacherPassword:"#teacherPassword",
+    viewAdvisoryStudentList:'a[href="viewList.php?schoolyear_assign=2022-2023"]',
+    // * == all with sectionhandlestudentblade.php?Section_id
+    viewSectionHandleList:'a[href*="sectionhandlestudentblade.php?section_id"]'
 }
