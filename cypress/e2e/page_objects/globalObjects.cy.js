@@ -9,10 +9,10 @@ class GlobalObjects{
     }
     clickButton(identifier,type){
         if(type=='text'){
-            cy.contains(identifier,{timeout:300}).click();
+            cy.contains(identifier,{timeout:300}).click({force:true});
         }
         else{
-            cy.get(identifier,{timeout:300}).click();
+            cy.get(identifier,{timeout:300}).click({force:true});
         }
         
     }

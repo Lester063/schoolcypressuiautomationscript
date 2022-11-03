@@ -1,8 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import globalobjects from '../../page_objects/globalObjects.cy.js';
-import loginPO from '../../page_objects/loginPO.cy.js';
 import adminTeacher from '../../page_objects/adminteacherPO.cy.js';
-const login=new loginPO();
+import { school } from "../../../schoolpageobject.js"
 const globalobject = new globalobjects();
 const adminteacher=new adminTeacher();
 
@@ -18,10 +17,10 @@ Given('I logged in as an Admin',()=>{
 });
 */
 When('I click the VIEW TEACHERS in sidebar',()=>{
-    globalobject.clickButton('VIEW TEACHERS','text');
+    globalobject.clickButton(school.navbarlink.viewTeacher,'text');
 });
 Then('I should be navigated to view teachers page successfully',()=>{
-    globalobject.assertText('VIEW TEACHERS', 'visible');
+    globalobject.assertText(school.navbarlink.viewTeacher, 'visible');
 });
 
 //create teacher
@@ -40,30 +39,30 @@ Then('the teacher account should be created successfully',()=>{
 
 //update teacher
 When('I navigated to VIEW TEACHERS page',()=>{
-    globalobject.clickButton('VIEW TEACHERS','text');
+    globalobject.clickButton(school.navbarlink.viewTeacher,'text');
 })
 When('I search the teacher',()=>{
-    globalobject.search('#searchTeacher','Ventura');
+    globalobject.search(school.searchTeacher,'Forthepractice');
 });
 When('I click the Edit Data button for teacher',()=>{
-    globalobject.clickButton('.editteacher','!text');
+    globalobject.clickButton(school.teachereditButton,'!text');
 });
 When('I entered the new data',()=>{
     adminteacher.newteacherdetails();
 });
 When('I click the update teacher button',()=>{
-    globalobject.clickButton('#submitbutton-editteacher','!text');
+    globalobject.clickButton(school.editTeacherSubmit,'!text');
 });
 When('I close the update modal box',()=>{
-    globalobject.clickButton('.closebutton-addstudent','!text');
+    globalobject.clickButton(school.modalcloseButton,'!text');
 });
 Then('the data should be updated successfully',()=>{
-    globalobject.assertText('Venturaaa','visible');
+    globalobject.assertText('Forthepracticeupdate','visible');
 });
 
 When('I click the delete button for teacher',()=>{
-    globalobject.clickButton('.deletebutton','!text');
+    globalobject.clickButton(school.deleteTeacherButton,'!text');
 });
 Then('the teacher account should be deleted successfully',()=>{
-    globalobject.assertText('Venturaaa','notvisible');
+    globalobject.assertText('Forthepracticeupdate','notvisible');
 })

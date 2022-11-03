@@ -87,10 +87,14 @@ export const school = {
     teacherUserlevel:"#teacher_userlevel",
     teacherDepartment:"#teacher_department",
     teacherRank:"#teacher_rank",
+    //searchTeacher
+    searchTeacher:"#searchTeacher",
     //when editing teacher details -only the last name
     teacherlastnameEdit:"#put_teacher_lastname",
     teacheraddButton:"#addTeacher",
     teachereditButton:".editteacher",
+    editTeacherSubmit:"#submitbutton-editteacher",
+    deleteTeacherButton:".deletebutton",
     // ---kulang yung teacher
 
 
