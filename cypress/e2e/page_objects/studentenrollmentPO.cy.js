@@ -5,6 +5,7 @@ import adminsectionPO from '../page_objects/adminsectionPO.cy.js';
 const login=new loginPO();
 const adminSection = new adminsectionPO();
 let subjects=['MATH','ENGLISH','SCIENCE','FILIPINO'];
+let profile=['Lester Carbungco Tuazon', 'l.tuazon232@school.com'];
 class StudentEnrollment{
     thereisSection(){
         login.getUrl();
@@ -25,7 +26,7 @@ class StudentEnrollment{
     loginStudent(){
         cy.visit('http://localhost/college/login/loginpage.php');
         cy.get(school.inputstudentEmail).type('l.tuazon232@school.com').click({force:true});
-        cy.get(school.inputstudentPassword).type('qwerty123').click({force:true});
+        cy.get(school.inputstudentPassword).type(school.qwerty123).click({force:true});
         cy.get('.login-submitButton').click({force:true});
     }
     selectSection(){
@@ -44,9 +45,46 @@ class StudentEnrollment{
         cy.get(school.registrationToggle).click();
     }
     assertRegisteredSubject(){
+        cy.wrap(subjects).each((ele)=>
+            cy.contains(ele).should('be.visible')
+        );
+        /*
         for(var subjectNum=0;subjectNum<=3;subjectNum++){
             cy.contains(subjects[subjectNum]).should('be.visible');
-        }
+        }*/
+        /*
+        cy.get('table').each((ele,x)=>
+            cy.get(ele).contains(subjects[x])
+        );
+        */
+    }
+    gotoGrades(){
+        cy.contains(school.studentnavbar.viewGrades).should('be.visible').click({force:true});
+    }
+    gotoProfileInfo(){
+        cy.contains(school.studentnavbar.profile,{timeout:300}).click({force:true});
+        cy.contains(school.studentnavbar.viewProfile).should('be.visible').click({force:true});
+    }
+    assertProfile(){
+        cy.wrap(profile).each((el)=>cy.contains(el).should('be.visible'))
+    }
+
+    gotoPassword(){
+        cy.contains(school.studentnavbar.profile,{timeout:300}).click({force:true});
+        cy.contains(school.studentnavbar.password).should('be.visible').click({force:true});
+    }
+    changePassword(oldPassword,newPassword,verifyPassword){
+        cy.get(school.oldPassword).clear().type(oldPassword);
+        cy.get(school.newPassword).clear().type(newPassword);
+        cy.get(school.verifynewPassword).clear().type(verifyPassword);
+        school.qwerty123 = verifyPassword;
+
+    }
+    clickChangePassword(){
+        cy.get(school.changePassword).click({force:true});
+    }
+    assertchangedPassword(){
+        //cy.contains('Changed Password Successfully').should('be.visible');
         
     }
 }

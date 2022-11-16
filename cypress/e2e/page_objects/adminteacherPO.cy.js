@@ -1,5 +1,6 @@
 import { school } from "../../../schoolpageobject.js"
 class Adminteacher{
+    
     //create teacher
     createteacherPage(){
         cy.contains(school.navbarlink.viewTeacher,{timeout:300}).click();

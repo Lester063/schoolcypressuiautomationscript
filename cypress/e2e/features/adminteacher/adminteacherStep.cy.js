@@ -1,7 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import globalobjects from '../../page_objects/globalObjects.cy.js';
 import adminTeacher from '../../page_objects/adminteacherPO.cy.js';
-import { school } from "../../../schoolpageobject.js"
+import { school } from "../../../../schoolpageobject.js"
 const globalobject = new globalobjects();
 const adminteacher=new adminTeacher();
 

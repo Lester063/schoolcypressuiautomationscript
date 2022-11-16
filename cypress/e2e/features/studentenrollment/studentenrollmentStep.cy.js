@@ -60,6 +60,8 @@ Given('I already enrolled',()=>{
     //accept student
     enrolled.clickPendingstudent();
 });
+
+
 /*
 Given('I am logged in as a Student',()=>{
 })
@@ -77,3 +79,48 @@ Then('I should see the subject I enrolled',()=>{
 Then('I delete the section to clear the section table',()=>{
 });
 */
+
+//view my grades
+/*
+Given('I already enrolled',()=>{
+});
+Given('I am logged in as a Student',()=>{
+})
+*/
+Given('I navigate to GRADES tab',()=>{
+    studentenrollmentPO.gotoGrades();
+});
+When('I expand my grade for the year',()=>{
+    studentenrollmentPO.openRegistration();
+});
+Then('I should see my enrolled subject with grades',()=>{
+    studentenrollmentPO.assertRegisteredSubject();
+});
+/*
+Then('I delete the section to clear the section table',()=>{
+});
+*/
+
+When('I navigate to PROFILE > VIEW PROFILE',()=>{
+    studentenrollmentPO.gotoProfileInfo();
+});
+Then('my info should be displayed',()=>{
+    studentenrollmentPO.assertProfile();
+});
+//change password
+/*
+Given('I am logged in as a Student',()=>{
+})
+*/
+Given('I navigate to PROFILE > PASSWORD',()=>{
+    studentenrollmentPO.gotoPassword();
+});
+When('I entered my old and new password, {string} {string} {string}',(oldPassword, newPassword, verifyPassword)=>{
+    studentenrollmentPO.changePassword(oldPassword, newPassword, verifyPassword);
+});
+When('I click Change Password button',()=>{
+    studentenrollmentPO.clickChangePassword();
+});
+Then('I should be able to change my password successfully',()=>{
+    studentenrollmentPO.assertchangedPassword();
+})

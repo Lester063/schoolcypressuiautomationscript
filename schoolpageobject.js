@@ -1,5 +1,6 @@
 export const school = {
     studentpageUrl:"http://localhost/college/login/loginpage.php",
+    qwerty123:"qwerty123",
     //student logged in
     studentUsername:".inputUsername",
     studentPassword:".inputPassword",
@@ -7,6 +8,8 @@ export const school = {
     studentnavbar:{
         enrollment:"ENROLLMENT",
         viewRegistration:"MY REGISTRATION",
+        viewGrades:"GRADES",
+        profile:"PROFILE", viewProfile:"VIEW PROFILE", password:"PASSWORD",
     },
     teachernavbar:{
         myAdvisory:"MY ADVISORY",
@@ -133,5 +136,12 @@ export const school = {
     teacherPassword:"#teacherPassword",
     viewAdvisoryStudentList:'a[href="viewList.php?schoolyear_assign=2022-2023"]',
     // * == all with sectionhandlestudentblade.php?Section_id
-    viewSectionHandleList:'a[href*="sectionhandlestudentblade.php?section_id"]'
+    viewSectionHandleList:'a[href*="sectionhandlestudentblade.php?section_id"]',
+
+    //student password
+    oldPassword:"#oldPassword",
+    newPassword:"#newPassword",
+    verifynewPassword:"#verify_newPassword",
+    changePassword:"#changePassword",
+
 }
