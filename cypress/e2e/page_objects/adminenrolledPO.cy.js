@@ -60,12 +60,18 @@ class Enrolled{
 
     //drop subject
     studentAdddropsubject(){
-        cy.get('a[href*="viewstudent_enrolledsubject.php?student_number"]',{timeout:300}).click();
+        cy.get(school.addDropLink,{timeout:300}).click();
     }
     dropSubject(){
+        /*
+        cy.get('.table > tbody > tr').each(($el,$index)=>{
+            cy.get($el).eq($index).contains('Action').click({force:true});
+        })*/
+        
         for(var x=0;x<=3;x++){
-            cy.get('.redblackButton',{scrollBehavior: false,force:true}).eq(x).click();
+            cy.get(school.redblackButton,{scrollBehavior: false,force:true}).eq(x).click();
         }
+        
     }
     assertDropsubject(){
         cy.reload();

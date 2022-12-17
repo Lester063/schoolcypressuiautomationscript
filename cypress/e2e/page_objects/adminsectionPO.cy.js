@@ -54,8 +54,8 @@ class Section{
         cy.contains('UPDATE',{timeout:300}).click();
     }
     closeModal(){
-        //cy.get('',{timeout:300}).click();
-        cy.reload()
+        cy.get('#updateSection > '+school.modalcloseButton,{timeout:300}).click({force:true});
+        //cy.reload()
     }
     assertnewsectionData(){
         globalobject.assertText('0/5','visible');
@@ -67,18 +67,18 @@ class Section{
         cy.contains('SY: 2022-2023').should('be.visible');
     }
     viewstudentLink(){
-        cy.get('a[href*="viewenrolledList.php?section_id"]',{timeout:300}).click();
+        cy.get(school.viewStudentLink,{timeout:300}).click();
     }
     assertviewstudentPage(){
-        cy.contains('ADMIN: ENROLL STUDENTS',{timeout:300}).should('be.visible');
+        cy.contains(school.viewSectionEnrolledPage,{timeout:300}).should('be.visible');
     }
 
     //open the assign teachers page of that section
     assignteachersLink(){
-        cy.get('a[href*="assignteacher_newversion.php?section_id"]',{timeout:300}).click();
+        cy.get(school.assignTeachersPage,{timeout:300}).click();
     }
     assertassignteacherPage(){
-        cy.contains('Assign Teacher',{timeout:300}).should('be.visible');
+        cy.contains(school.assertAssignTeacherPage,{timeout:300}).should('be.visible');
     }
 
     //delete the section
@@ -86,7 +86,7 @@ class Section{
         cy.contains(school.deleteText,{timeout:300}).click();
     }
     assertsectionDeleted(){
-        cy.contains('Deleted Section Successfully.').should('be.visible');
+        cy.contains(school.deletedSectionText).should('be.visible');
     }
 }
 

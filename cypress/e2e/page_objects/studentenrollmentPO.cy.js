@@ -62,7 +62,7 @@ class StudentEnrollment{
         cy.contains(school.studentnavbar.viewGrades).should('be.visible').click({force:true});
     }
     gotoProfileInfo(){
-        cy.contains(school.studentnavbar.profile,{timeout:300}).click({force:true});
+        cy.contains(school.studentnavbar.profile,{timeout:300}).click();
         cy.contains(school.studentnavbar.viewProfile).should('be.visible').click({force:true});
     }
     assertProfile(){

@@ -109,8 +109,17 @@ export const school = {
     selectAdviser:"[name='adviser_id']",
     selectTeacher:"[name='teacher[]']",
     assignteacherButton:"#new_assignTeachers > .bluewhiteButton",
+
+    viewStudentLink:'a[href*="viewenrolledList.php?section_id"]',
+    viewSectionEnrolledPage:'ADMIN: ENROLL STUDENTS',
+
+    assignTeachersPage:'a[href*="assignteacher_newversion.php?section_id"]',
+    assertAssignTeacherPage:'Assign Teacher',
+
+    deletedSectionText:'Deleted Section Successfully.',
     
     //adminenrolled
+    addDropLink:'a[href*="viewstudent_enrolledsubject.php?student_number"]',
     //student enrolling
     clickSection:"#section_id",
     clickEnrollbutton:"#enrollbutton",
