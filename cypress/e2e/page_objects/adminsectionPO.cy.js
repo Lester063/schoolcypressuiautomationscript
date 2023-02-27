@@ -1,5 +1,6 @@
 import { school } from "../../../schoolpageobject.js";
 import globalobjects from '../page_objects/globalObjects.cy.js';
+const moment = require('moment');
 const globalobject = new globalobjects();
 subjects = ['walato','78','79','80','81'];
 class Section{
@@ -32,8 +33,10 @@ class Section{
         cy.get(school.maxstudentSection).type('3');
     }
     start_end(){
-        cy.get(school.start_date).click().type('2022-10-31T08:30');
-        cy.get(school.end_date).click().type('2022-11-30T20:30');
+        var today = moment().format("YYYY-MM-DDThh:mm");
+        var tom = moment(today).add(5, 'days').format("YYYY-MM-DDThh:mm");
+        cy.get(school.start_date).type(today);
+        cy.get(school.end_date).type(tom);
     }
     addsectionButton(){
         globalobject.clickButton(school.addsectionButton,'!text');
@@ -54,7 +57,7 @@ class Section{
         cy.contains('UPDATE',{timeout:300}).click();
     }
     closeModal(){
-        cy.get('#updateSection > '+school.modalcloseButton,{timeout:300}).click({force:true});
+        cy.get(school.modalcloseButton,{timeout:300}).click({force:true});
         //cy.reload()
     }
     assertnewsectionData(){

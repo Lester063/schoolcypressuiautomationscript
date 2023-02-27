@@ -58,7 +58,7 @@ Given('I am in the student page',()=>{
     globalobject.assertText('VIEW STUDENT','visible');
 });
 Given('I search the student I created',()=>{
-    globalobject.search(school.searchField,'Paynadoo');
+    globalobject.search(school.searchField,'Tuazonn');
 })
 Given('I click the Edit Data button',()=>{
     globalobject.clickButton(school.editButton,'!text');
@@ -73,7 +73,7 @@ When('I close the modal box',()=>{
     globalobject.clickButton(school.modalcloseButton,'!text');
 });*/
 Then('the student data should be update successfully',()=>{
-    globalobject.assertText('Edreeeeen Maeee','visible');
+    globalobject.assertText('Tuazonn, Lesterr','visible');
 });
 //deactivate the student
 When('I click the activated button',()=>{
@@ -84,12 +84,12 @@ Then('the student should be deactivated',()=>{
 });
 //Should be able to search and delete the student I created
 When('I search for the student',()=>{
-    globalobject.search(school.searchField,'Paynadoooo');
+    globalobject.search(school.searchField,'Tuazonn');
 });
 When('I delete the student',()=>{
     globalobject.clickButton(school.deleteText,'text');
 });
 Then('the student should be deleted successfully',()=>{
-    globalobject.assertText('Paynadoooo','notvisible');
+    globalobject.assertText('Lesterr','notvisible');
 });
 
