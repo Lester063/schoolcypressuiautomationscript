@@ -6,7 +6,7 @@ const login=new loginPO();
 const adminSection = new adminsectionPO();
 class Enrolled{
     thereisEnrolledstudent(){
-        login.getUrl();
+        login.navigateToAdminLoginPage();
         login.getUsername();
         login.getPassword();
         login.loginbuttonClick();
@@ -21,20 +21,17 @@ class Enrolled{
         adminSection.start_end();
         adminSection.addsectionButton();
         cy.reload();
-        adminSection.assignteachersLink();
-        cy.get(school.selectAdviser,{timeout:300}).select('71');
-        cy.get(school.selectTeacher,{timeout:300}).eq(0).select('71');
-        cy.get(school.selectTeacher,{timeout:300}).eq(1).select('73');
-        cy.get(school.selectTeacher,{timeout:300}).eq(2).select('74');
-        cy.get(school.selectTeacher,{timeout:300}).eq(3).select('75');
-        cy.get(school.assignteacherButton,{timeout:300}).click();
+        adminSection.navigateToAssignTeacherPage();
+        adminSection.assignAdviser();
+        adminSection.assignTeachers();
+        adminSection.clickAssignButton();
     
         cy.visit(school.studentpageUrl);
-        cy.get(school.studentUsername,{timeout:300}).type('l.tuazon232@school.com');
+        cy.get(school.studentUsername,{timeout:300}).type('t.student241@school.com');
         cy.get(school.studentPassword,{timeout:300}).type('qwerty123');
         cy.get(school.studentloginButton,{timeout:3000}).click();
     
-        cy.contains(school.studentnavbar.enrollment,{timeout:300}).click();
+        cy.contains(school.studentnavbar.enrollment,{timeout:300}).click({force:true});
         cy.get(school.clickSection,{timeout:300}).eq(0).click();
     
         cy.get(school.clickEnrollbutton,{timeout:300}).click();
@@ -51,11 +48,11 @@ class Enrolled{
     }
     assertIfstudentaccepted(){
         cy.contains(school.textApproved,{timeout:300}).click();
-        cy.contains('Tuazon,').should('be.visible');
+        cy.contains('Student').should('be.visible');
     }
     assertPendinglist(){
         cy.contains(school.textPending,{timeout:300}).click();
-        cy.contains('Tuazon,').should('not.exist');
+        cy.contains('Student').should('not.exist');
     }
 
     //drop subject
@@ -63,12 +60,7 @@ class Enrolled{
         cy.get(school.addDropLink,{timeout:300}).click();
     }
     dropSubject(){
-        /*
-        cy.get('.table > tbody > tr').each(($el,$index)=>{
-            cy.get($el).eq($index).contains('Action').click({force:true});
-        })*/
-        
-        for(var x=0;x<=3;x++){
+        for(var x=0;x<=1;x++){
             cy.get(school.redblackButton,{scrollBehavior: false,force:true}).eq(x).click();
         }
         
@@ -80,7 +72,7 @@ class Enrolled{
 
     //add back the subject
     addagainSubject(){
-        for(var y=0;y<=3;y++){
+        for(var y=0;y<=1;y++){
             cy.get(school.bluewhiteButton,{scrollBehavior: false,force:true}).eq(y).click();
         }
     }

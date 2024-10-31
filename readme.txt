@@ -1,3 +1,1 @@
-https://filiphric.com/cypress-basics-before-beforeeach-after-aftereach
-
-ongoing automation
+https://drive.google.com/file/d/12K6Og7okiqbAqD1O_atEy0TlCRwpPHiS/view?usp=sharing

@@ -8,6 +8,7 @@ import loginPO from '../../page_objects/loginPO.cy.js';
 const enrolled = new adminenrolledPO()
 const teacher =new teacherPO();
 const login=new loginPO();
+
 //advisory
 Given('I am assigned to a section as an Adviser',()=>{
     enrolled.thereisEnrolledstudent();
@@ -35,7 +36,7 @@ Given('I am assigned to a section as a subject teacher',()=>{
     enrolled.thereisEnrolledstudent();
 
     //login admin
-    login.getUrl();
+    login.navigateToAdminLoginPage();
     login.getUsername();
     login.getPassword();
     login.loginbuttonClick();
@@ -43,6 +44,7 @@ Given('I am assigned to a section as a subject teacher',()=>{
     enrolled.viewenrolledPage();
     enrolled.clickPendingtab();
     enrolled.clickPendingstudent();
+    login.logOut();
 });
 /*
 Given('I am logged in as a Teacher',()=>{

@@ -37,7 +37,7 @@ Then('I should see a success message that I enrolled successfully',()=>{
     studentenrollmentPO.assertEnroll();
 });
 Then('I delete the section to clear the section table',()=>{
-    login.getUrl();
+    login.navigateToAdminLoginPage();
     login.getUsername();
     login.getPassword();
     login.loginbuttonClick();
@@ -49,7 +49,7 @@ Then('I delete the section to clear the section table',()=>{
 Given('I already enrolled',()=>{
     enrolled.thereisEnrolledstudent();
     //login admin
-    login.getUrl();
+    login.navigateToAdminLoginPage();
     login.getUsername();
     login.getPassword();
     login.loginbuttonClick();

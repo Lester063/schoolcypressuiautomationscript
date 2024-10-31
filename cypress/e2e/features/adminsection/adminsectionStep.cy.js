@@ -13,14 +13,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
 });
-//value of subjects --value are the id of each subject
-subjects = ['walato','78','79','80','81'];
 
-/*
-Given('I am logged in as an Admin',()=>{
-
-});
-*/
 //create
 Given('I navigated to VIEW SECTIONS',()=>{
     globalobject.clickButton(school.navbarlink.viewSection,'text');
@@ -44,7 +37,6 @@ When('I entered maximum numbers',()=>{
     adminSection.entermaxstudentNumber();
 });
 When('I choose start and end date of section to be available in enrollment',()=>{
-    //globalobject.clickButton(school.start_date,'!text');
     adminSection.start_end();
 });
 When('I click ADD SECTION button',()=>{
@@ -65,8 +57,8 @@ When('I click update section button',()=>{
     adminSection.goEditButton();
 });
 
-When('I close the modal box',()=>{
-    adminSection.closeModal();
+When('I refresh the page',()=>{
+    adminSection.refreshPage();
 });
 
 Then('I should see that the section is updated with the data I entered',()=>{
@@ -86,7 +78,7 @@ Then('I should be navigated to View Student list page of that section',()=>{
 
 //open the Assign Teachers page of that section
 When('I click the Assign Teachers link of that section',()=>{
-    adminSection.assignteachersLink();
+    adminSection.navigateToAssignTeacherPage();
 });
 Then('I should be navigated to Assign Teachers page of that section',()=>{
     adminSection.assertassignteacherPage();

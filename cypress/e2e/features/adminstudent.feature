@@ -18,7 +18,7 @@ And I search the student I created
 And I click the Edit Data button
 When I entered new data of the student
 And I click the update button
-And I close the modal box
+And I refresh the page
 Then the student data should be update successfully
 
 #deactivate the student

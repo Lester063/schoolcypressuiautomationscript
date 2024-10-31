@@ -7,8 +7,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   })
+
 Given('I am on the login page',()=>{
-    login.getUrl();
+    login.navigateToAdminLoginPage();
 });
 When('I entered my valid credentials',()=>{
     login.getUsername();

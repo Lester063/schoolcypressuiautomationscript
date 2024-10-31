@@ -9,10 +9,10 @@ Then I should be navigated to the page successfully, '<url>'
 
 Examples:
 |link           |url|
-|VIEW STUDENTS  |http://localhost/college/admin/studentData/viewstudent.php         |
-|VIEW TEACHERS  |http://localhost/college/admin/teacherData/viewteacher.php         |
-|VIEW SECTIONS  |http://localhost/college/admin/sectionData/viewsections.php        |
-|VIEW ENROLLED  |http://localhost/college/admin/enrolledstudentData/viewenrolled.php|
-|ADD NEWS       |http://localhost/college/admin/news/addnewsblade.php               |
-|VIEW NEWS      |http://localhost/college/admin/news/viewnews.php                   |
-|PROFILE        |http://localhost/college/admin/adminPage/admininfo.php             |
+|VIEW STUDENTS  |http://localhost/school/admin/studentData/viewstudent.php         |
+|VIEW TEACHERS  |http://localhost/school/admin/teacherData/viewteacher.php         |
+|VIEW SECTIONS  |http://localhost/school/admin/sectionData/viewsections.php        |
+|VIEW ENROLLED  |http://localhost/school/admin/enrolledstudentData/viewenrolled.php|
+|ADD NEWS       |http://localhost/school/admin/news/addnewsblade.php               |
+|VIEW NEWS      |http://localhost/school/admin/news/viewnews.php                   |
+|PROFILE        |http://localhost/school/admin/adminPage/admininfo.php             |

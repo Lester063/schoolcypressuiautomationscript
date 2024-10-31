@@ -22,7 +22,7 @@ And I navigated to VIEW SECTIONS
 When I click the Edit section data
 And I entered a new data
 And I click update section button
-And I close the modal box
+And I refresh the page
 Then I should see that the section is updated with the data I entered
 
 Scenario: Should be able to open the View Student List page

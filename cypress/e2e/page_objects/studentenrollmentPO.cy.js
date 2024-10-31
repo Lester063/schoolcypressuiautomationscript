@@ -4,11 +4,11 @@ import adminsectionPO from '../page_objects/adminsectionPO.cy.js';
 
 const login=new loginPO();
 const adminSection = new adminsectionPO();
-let subjects=['MATH','ENGLISH','SCIENCE','FILIPINO'];
-let profile=['Lester Carbungco Tuazon', 'l.tuazon232@school.com'];
+let subjects=['ICT MAJOR', 'Math'];
+let profile=['Test1 Student', 't.student241@school.com'];
 class StudentEnrollment{
     thereisSection(){
-        login.getUrl();
+        login.navigateToAdminLoginPage();
         login.getUsername();
         login.getPassword();
         login.loginbuttonClick();
@@ -24,8 +24,8 @@ class StudentEnrollment{
         adminSection.addsectionButton();
     }
     loginStudent(){
-        cy.visit('http://localhost/college/login/loginpage.php');
-        cy.get(school.inputstudentEmail).type('l.tuazon232@school.com').click({force:true});
+        cy.visit('http://localhost/school/login/loginpage.php');
+        cy.get(school.inputstudentEmail).type('t.student241@school.com').click({force:true});
         cy.get(school.inputstudentPassword).type(school.qwerty123).click({force:true});
         cy.get('.login-submitButton').click({force:true});
     }

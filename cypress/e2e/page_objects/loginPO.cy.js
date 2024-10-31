@@ -1,18 +1,20 @@
+import { school } from "../../../schoolpageobject.js";
+
 class Login{
-    getUrl(){
-        cy.visit('http://localhost/college/login/loginadmin.php');
+    navigateToAdminLoginPage(){
+        cy.visit('http://localhost/school/login/loginadmin.php');
     }
     getUsername(){
-        cy.get('.inputUsername',{timeout:300}).type('admin@school.com');
+        cy.get(school.studentUsername,{timeout:300}).type('admin@school.com');
     }
     getPassword(){
-        cy.get('.inputPassword',{timeout:300}).type('admin123');
+        cy.get(school.studentPassword,{timeout:300}).type('qwerty123');
     }
     loginbuttonClick(){
-        cy.get('.login-submitButton',{wait:3000}).click();
+        cy.get(school.studentloginButton,{wait:3000}).click();
     }
     assertLogin(){
-        cy.url().should('eq', 'http://localhost/college/admin/adminPage/adminpage.php')
+        cy.url().should('eq', 'http://localhost/school/admin/adminPage/adminpage.php')
     }
 }
 

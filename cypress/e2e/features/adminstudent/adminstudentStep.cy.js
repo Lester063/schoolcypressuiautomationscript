@@ -13,29 +13,13 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   });
-/*
-beforeEach(function(){
-    login.getUrl();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
-})
-*/
-//Should be able to create student account
-/*
-beforeEach(function(){
-    login.getUrl();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
-});
-*/
+
 Given('I am logged in as an Admin',()=>{
-    login.getUrl();
+    login.navigateToAdminLoginPage();
     login.getUsername();
     login.getPassword();
     login.loginbuttonClick();
-    globalobject.assertText('Lester','visible');
+    globalobject.assertText('Admin','visible');
 });
 
 Given('I navigate to VIEW STUDENT > Add Student',()=>{
@@ -68,10 +52,8 @@ When('I entered new data of the student',()=>{
 });
 When('I click the update button',()=>{
     globalobject.clickButton(school.submiteditButton,'!text');
-});/*
-When('I close the modal box',()=>{
-    globalobject.clickButton(school.modalcloseButton,'!text');
-});*/
+});
+
 Then('the student data should be update successfully',()=>{
     globalobject.assertText('Tuazonn, Lesterr','visible');
 });
