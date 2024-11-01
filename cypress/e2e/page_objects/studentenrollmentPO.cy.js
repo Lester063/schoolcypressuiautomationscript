@@ -10,7 +10,7 @@ class StudentEnrollment{
     thereIsSection(){
         login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     
-        cy.contains(school.navbarlink.viewSection,{timeout:300}).click();
+        cy.contains(school.navbarLink.viewSection,{timeout:300}).click();
         adminSection.openAddSectionModal();
         adminSection.addSubjectSelectOption();
         adminSection.selectYearSection();
@@ -22,11 +22,11 @@ class StudentEnrollment{
     }
 
     selectSection(){
-        cy.get(school.selectsection).click();
+        cy.get(school.selectSection).click();
     }
 
     clickEnrollbutton(){
-        cy.get(school.enrollbutton).click();
+        cy.get(school.clickEnrollbutton).click();
     }
 
     assertEnroll(){
@@ -34,7 +34,7 @@ class StudentEnrollment{
     }
 
     goToMyRegistrationPage(){
-        cy.contains(school.studentnavbar.viewRegistration).click();
+        cy.contains(school.studentNavbar.viewRegistration).click();
     }
 
     openRegistration(){
@@ -48,12 +48,12 @@ class StudentEnrollment{
     }
 
     goToGrades(){
-        cy.contains(school.studentnavbar.viewGrades).should('be.visible').click({force:true});
+        cy.contains(school.studentNavbar.viewGrades).should('be.visible').click({force:true});
     }
 
     goToProfileInfo(){
-        cy.contains(school.studentnavbar.profile,{timeout:300}).click();
-        cy.contains(school.studentnavbar.viewProfile).should('be.visible').click({force:true});
+        cy.contains(school.studentNavbar.profile,{timeout:300}).click();
+        cy.contains(school.studentNavbar.viewProfile).should('be.visible').click({force:true});
     }
 
     assertProfile(){
@@ -61,16 +61,14 @@ class StudentEnrollment{
     }
 
     goToPassword(){
-        cy.contains(school.studentnavbar.profile,{timeout:300}).click({force:true});
-        cy.contains(school.studentnavbar.password).should('be.visible').click({force:true});
+        cy.contains(school.studentNavbar.profile,{timeout:300}).click({force:true});
+        cy.contains(school.studentNavbar.password).should('be.visible').click({force:true});
     }
 
     changePassword(oldPassword,newPassword,verifyPassword){
         cy.get(school.oldPassword).clear().type(oldPassword);
         cy.get(school.newPassword).clear().type(newPassword);
         cy.get(school.verifynewPassword).clear().type(verifyPassword);
-        school.qwerty123 = verifyPassword;
-
     }
 
     clickChangePassword(){

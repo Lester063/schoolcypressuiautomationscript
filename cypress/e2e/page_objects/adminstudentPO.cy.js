@@ -16,8 +16,8 @@ class AdminStudent{
         cy.get(school.addButton,{timeout:300}).click();
     }
     newDataStudent(){
-        cy.get(school.newfirstname,{timeout:300}).clear().type('Lesterr');
-        cy.get(school.newlastname,{timeout:300}).clear().type('Tuazonn');
+        cy.get(school.newFirstName,{timeout:300}).clear().type('Lesterr');
+        cy.get(school.newLastName,{timeout:300}).clear().type('Tuazonn');
     }
 
 
