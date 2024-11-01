@@ -7,18 +7,18 @@ const adminSection = new adminsectionPO();
 let subjects=['ICT MAJOR', 'Math'];
 let profile=['Test1 Student', 't.student241@school.com'];
 class StudentEnrollment{
-    thereisSection(){
+    thereIsSection(){
         login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     
         cy.contains(school.navbarlink.viewSection,{timeout:300}).click();
-        adminSection.openaddsectionModal();
-        adminSection.addsubjectselectOption();
-        adminSection.selectyearSection();
+        adminSection.openAddSectionModal();
+        adminSection.addSubjectSelectOption();
+        adminSection.selectYearSection();
         adminSection.selectSubject();
         adminSection.selectCourse();
-        adminSection.entermaxstudentNumber();
-        adminSection.start_end();
-        adminSection.addsectionButton();
+        adminSection.enterMaxStudentNumber();
+        adminSection.sectionStartEnd();
+        adminSection.addSectionButton();
     }
     loginStudent(){
         cy.visit('http://localhost/school/login/loginpage.php');
@@ -35,7 +35,7 @@ class StudentEnrollment{
     assertEnroll(){
         cy.get(school.enrollmentMessage).should('contain', 'Success!');
     }
-    gotoMyRegistrationPage(){
+    goToMyRegistrationPage(){
         cy.contains(school.studentnavbar.viewRegistration).click();
     }
     openRegistration(){
@@ -45,20 +45,11 @@ class StudentEnrollment{
         cy.wrap(subjects).each((ele)=>
             cy.contains(ele).should('be.visible')
         );
-        /*
-        for(var subjectNum=0;subjectNum<=3;subjectNum++){
-            cy.contains(subjects[subjectNum]).should('be.visible');
-        }*/
-        /*
-        cy.get('table').each((ele,x)=>
-            cy.get(ele).contains(subjects[x])
-        );
-        */
     }
-    gotoGrades(){
+    goToGrades(){
         cy.contains(school.studentnavbar.viewGrades).should('be.visible').click({force:true});
     }
-    gotoProfileInfo(){
+    goToProfileInfo(){
         cy.contains(school.studentnavbar.profile,{timeout:300}).click();
         cy.contains(school.studentnavbar.viewProfile).should('be.visible').click({force:true});
     }
@@ -66,7 +57,7 @@ class StudentEnrollment{
         cy.wrap(profile).each((el)=>cy.contains(el).should('be.visible'))
     }
 
-    gotoPassword(){
+    goToPassword(){
         cy.contains(school.studentnavbar.profile,{timeout:300}).click({force:true});
         cy.contains(school.studentnavbar.password).should('be.visible').click({force:true});
     }
@@ -80,9 +71,8 @@ class StudentEnrollment{
     clickChangePassword(){
         cy.get(school.changePassword).click({force:true});
     }
-    assertchangedPassword(){
+    assertChangedPassword(){
         //cy.contains('Changed Password Successfully').should('be.visible');
-        
     }
 }
 

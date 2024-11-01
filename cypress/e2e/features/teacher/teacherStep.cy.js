@@ -11,13 +11,13 @@ const login=new loginPO();
 
 //advisory
 Given('I am assigned to a section as an Adviser',()=>{
-    enrolled.thereisEnrolledstudent();
+    enrolled.thereIsEnrolledstudent();
 });
 Given('I am logged in as a Teacher',()=>{
     login.loginUser('Teacher', 'test1teacher1@school.com', 'qwerty123');
 });
 When('I Navigate to My advisory',()=>{
-    teacher.gotoMyAdvisoryPage();
+    teacher.goToMyAdvisoryPage();
 });
 When('I click the view link to view the list of my student',()=>{
     teacher.viewAdvisoryStudent();
@@ -33,14 +33,14 @@ And('I delete the section to clear the section table',()=>{
 
 //section handle
 Given('I am assigned to a section as a subject teacher',()=>{
-    enrolled.thereisEnrolledstudent();
+    enrolled.thereIsEnrolledstudent();
 
     //login admin
     login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     //accept student
-    enrolled.viewenrolledPage();
-    enrolled.clickPendingtab();
-    enrolled.clickPendingstudent();
+    enrolled.viewEnrolledPage();
+    enrolled.clickPendingTab();
+    enrolled.clickPendingStudent();
 });
 /*
 Given('I am logged in as a Teacher',()=>{
@@ -48,7 +48,7 @@ Given('I am logged in as a Teacher',()=>{
 });
 */
 When('I Navigate to Section Handle page',()=>{
-    teacher.gotoSectionHandlePage();
+    teacher.goToSectionHandlePage();
 });
 When('I click the view link to view the list of the student',()=>{
     teacher.viewSectionHandleStudent();

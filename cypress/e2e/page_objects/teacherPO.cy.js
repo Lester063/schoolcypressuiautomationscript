@@ -2,7 +2,7 @@ import { school } from "../../../schoolpageobject.js";
 
 let studentName=['Student, Test1'];
 class Teacher{
-    gotoMyAdvisoryPage(){
+    goToMyAdvisoryPage(){
         cy.contains(school.teachernavbar.myAdvisory).click();
     }
     viewAdvisoryStudent(){
@@ -13,7 +13,7 @@ class Teacher{
             cy.contains(studentName[x]).should('be.visible');
         }
     }
-    gotoSectionHandlePage(){
+    goToSectionHandlePage(){
         cy.contains(school.teachernavbar.sectionHandle).click();
     }
     viewSectionHandleStudent(){

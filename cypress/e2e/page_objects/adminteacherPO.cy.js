@@ -2,11 +2,11 @@ import { school } from "../../../schoolpageobject.js"
 class Adminteacher{
     
     //create teacher
-    createteacherPage(){
+    createTeacherPage(){
         cy.contains(school.navbarlink.viewTeacher,{timeout:300}).click();
         cy.contains(school.navbarlink.addTeacher,{timeout:300}).click();
     }
-    enterteacherDetails(){
+    enterTeacherDetails(){
         cy.get(school.teacherFirstname,{timeout:300}).type('Forthetest');
         cy.get(school.teacherMiddlename,{timeout:300}).type('Fortheautomation');
         cy.get(school.teacherLastname,{timeout:300}).type('Forthepractice');
@@ -15,11 +15,11 @@ class Adminteacher{
         cy.get(school.teacherDepartment,{timeout:300}).select('math');
         cy.get(school.teacherRank,{timeout:300}).select('teacher1');
     }
-    addteacherButton(){
+    addTeacherButton(){
         cy.get(school.teacheraddButton,{timeout:300}).click();
     }
     //edit -the data
-    newteacherdetails(){
+    newTeacherDetails(){
         cy.get(school.teacherlastnameEdit,{timeout:300}).clear().type('Forthepracticeupdate');
     }
 }
