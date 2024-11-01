@@ -19,7 +19,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 //enrollment
 Given('today is the enrollment day',()=>{
-    studentenrollmentPO.thereisSection();
+    studentenrollmentPO.thereIsSection();
 });
 Given('I am logged in as a Student',()=>{
     studentenrollmentPO.loginStudent();
@@ -39,20 +39,20 @@ Then('I should see a success message that I enrolled successfully',()=>{
 Then('I delete the section to clear the section table',()=>{
     login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     cy.contains(school.navbarlink.viewSection).click();
-    adminSection.deletesectionButton();
+    adminSection.deleteSectionButton();
 });
 
 //view registration
 Given('I already enrolled',()=>{
-    enrolled.thereisEnrolledstudent();
+    enrolled.thereIsEnrolledstudent();
     //login admin
     login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     //view enrolled
-    enrolled.viewenrolledPage();
+    enrolled.viewEnrolledPage();
     //pending
-    enrolled.clickPendingtab();
+    enrolled.clickPendingTab();
     //accept student
-    enrolled.clickPendingstudent();
+    enrolled.clickPendingStudent();
 });
 
 
@@ -61,7 +61,7 @@ Given('I am logged in as a Student',()=>{
 })
 */
 Given('I navigate to MY REGISTRATION Page',()=>{
-    studentenrollmentPO.gotoMyRegistrationPage();
+    studentenrollmentPO.goToMyRegistrationPage();
 });
 When('I click the section bar',()=>{
     studentenrollmentPO.openRegistration();
@@ -82,7 +82,7 @@ Given('I am logged in as a Student',()=>{
 })
 */
 Given('I navigate to GRADES tab',()=>{
-    studentenrollmentPO.gotoGrades();
+    studentenrollmentPO.goToGrades();
 });
 When('I expand my grade for the year',()=>{
     studentenrollmentPO.openRegistration();
@@ -96,7 +96,7 @@ Then('I delete the section to clear the section table',()=>{
 */
 
 When('I navigate to PROFILE > VIEW PROFILE',()=>{
-    studentenrollmentPO.gotoProfileInfo();
+    studentenrollmentPO.goToProfileInfo();
 });
 Then('my info should be displayed',()=>{
     studentenrollmentPO.assertProfile();
@@ -107,7 +107,7 @@ Given('I am logged in as a Student',()=>{
 })
 */
 Given('I navigate to PROFILE > PASSWORD',()=>{
-    studentenrollmentPO.gotoPassword();
+    studentenrollmentPO.goToPassword();
 });
 When('I entered my old and new password, {string} {string} {string}',(oldPassword, newPassword, verifyPassword)=>{
     studentenrollmentPO.changePassword(oldPassword, newPassword, verifyPassword);
@@ -116,5 +116,5 @@ When('I click Change Password button',()=>{
     studentenrollmentPO.clickChangePassword();
 });
 Then('I should be able to change my password successfully',()=>{
-    studentenrollmentPO.assertchangedPassword();
+    studentenrollmentPO.assertChangedPassword();
 })

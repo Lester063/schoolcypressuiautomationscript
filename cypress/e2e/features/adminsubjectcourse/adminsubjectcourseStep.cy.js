@@ -23,7 +23,7 @@ Given('I navigate SUBJECT > VIEW SUBJECT',()=>{
     globalobject.clickButton(school.navbarlink.viewSubject,'text');
 });
 When('I enter the subject name and description in text box',()=>{
-    subjectcoursepo.addsubjectDetails();
+    subjectcoursepo.addSubjectDetails();
 });
 When('I click the Add button',()=>{
     globalobject.clickButton(school.addsubjectButton,'!text');
@@ -46,7 +46,7 @@ Given('I navigated to SUBJECT > VIEW COURSE',()=>{
     globalobject.clickButton(school.navbarlink.viewCourse,'text');
 });
 When('I enter the course name and course description in the input field',()=>{
-    subjectcoursepo.addcourseDetails();
+    subjectcoursepo.addCourseDetails();
 });
 When('I click the Add course button',()=>{
     globalobject.clickButton(school.bluewhiteButton,'!text');

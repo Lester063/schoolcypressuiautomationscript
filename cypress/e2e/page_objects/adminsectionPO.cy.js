@@ -4,17 +4,17 @@ const moment = require('moment');
 const globalobject = new globalobjects();
 subjects = ['null','10','12'];//id's of subject
 class Section{
-    //till assertsectionCreated -line 41 ==create section
-    openaddsectionModal(){
+    //till assertSectionIsCreated -line 41 ==create section
+    openAddSectionModal(){
         globalobject.clickButton(school.addsectionmodalTrigger,'!text');
     }
-    addsubjectselectOption(){
+    addSubjectSelectOption(){
         //adjust numbers depends on your need
         for(var i=0;i<1;i++){
             globalobject.clickButton(school.addselectSection,'!text');
         }
     }
-    selectyearSection(){
+    selectYearSection(){
         globalobject.selectOption(school.gradeyear,0,'11');
         globalobject.selectOption(school.section,0,'A');
     }
@@ -26,28 +26,28 @@ class Section{
     selectCourse(){
         globalobject.selectOption(school.selectcourse,0,'ICT');
     }
-    entermaxstudentNumber(){
+    enterMaxStudentNumber(){
         cy.get(school.maxstudentSection).type('3');
     }
-    start_end(){
+    sectionStartEnd(){
         var today = moment().format("YYYY-MM-DDThh:mm");
         var tom = moment(today).add(5, 'days').format("YYYY-MM-DDThh:mm");
         cy.get(school.start_date).type(today);
         cy.get(school.end_date).type(tom);
     }
-    addsectionButton(){
+    addSectionButton(){
         globalobject.clickButton(school.addsectionButton,'!text', {timeout:300});
     }
-    assertsectionCreated(){
+    assertSectionIsCreated(){
         globalobject.assertText('Created Section Successfully.','visible');
     }
 
 
     //update the maximum numbers into 5
-    editsectionModal(){
+    editSectionModal(){
         cy.get(school.editsectionbutton,{timeout:300}).click();
     }
-    entersectionNewdata(){
+    enterSectionNewData(){
         cy.get(school.editsectionQty,{timeout:300}).clear().type('5');
     }
     goEditButton(){
@@ -56,19 +56,19 @@ class Section{
     refreshPage(){
         cy.reload();
     }
-    assertnewsectionData(){
+    assertNewSectionData(){
         globalobject.assertText('0/5','visible');
     }
 
 
     //open the View Student List page of that section
-    assertExistingsection(){
+    assertExistingSection(){
         cy.contains('SY: 2023-2024').should('be.visible');
     }
-    viewstudentLink(){
+    viewStudentLink(){
         cy.get(school.viewStudentLink,{timeout:300}).click();
     }
-    assertviewstudentPage(){
+    assertViewStudentPage(){
         cy.contains(school.viewSectionEnrolledPage,{timeout:300}).should('be.visible');
     }
 
@@ -87,16 +87,16 @@ class Section{
         cy.get(school.assignteacherButton,{timeout:300}).click();
     }
 
-    assertassignteacherPage(){
+    assertAssignTeacherPage(){
         cy.contains(school.assertAssignTeacherPage,{timeout:300}).should('be.visible');
     }
 
 
     //delete the section
-    deletesectionButton(){
+    deleteSectionButton(){
         cy.contains(school.deleteText,{timeout:300}).click();
     }
-    assertsectionDeleted(){
+    assertSectionIsDeleted(){
         cy.contains(school.deletedSectionText).should('be.visible');
     }
 }

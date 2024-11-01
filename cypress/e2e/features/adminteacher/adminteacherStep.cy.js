@@ -25,13 +25,13 @@ Then('I should be navigated to view teachers page successfully',()=>{
 
 //create teacher
 When('I navigated to VIEW TEACHERS > Add Teacher',()=>{
-    adminteacher.createteacherPage();
+    adminteacher.createTeacherPage();
 });
 When('I entered the details of teacher',()=>{
-    adminteacher.enterteacherDetails();
+    adminteacher.enterTeacherDetails();
 });
 When('I click the add teacher button',()=>{
-    adminteacher.addteacherButton();
+    adminteacher.addTeacherButton();
 });
 Then('the teacher account should be created successfully',()=>{
     globalobject.assertText('09212483577','visible');
@@ -48,7 +48,7 @@ When('I click the Edit Data button for teacher',()=>{
     globalobject.clickButton(school.teachereditButton,'!text');
 });
 When('I entered the new data',()=>{
-    adminteacher.newteacherdetails();
+    adminteacher.newTeacherDetails();
 });
 When('I click the update teacher button',()=>{
     globalobject.clickButton(school.editTeacherSubmit,'!text');

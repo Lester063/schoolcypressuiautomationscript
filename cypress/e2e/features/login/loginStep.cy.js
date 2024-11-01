@@ -20,4 +20,4 @@ When('I click the login button',()=>{
 });
 Then('I should be navigated to the dashboard, {string}',async(redirectedLink)=>{
     login.assertLogin(redirectedLink);
-})
+});

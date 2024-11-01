@@ -19,13 +19,13 @@ Given('I navigated to VIEW SECTIONS',()=>{
     globalobject.clickButton(school.navbarlink.viewSection,'text');
 });
 Given('I click the Add Section button',()=>{
-    adminSection.openaddsectionModal();
+    adminSection.openAddSectionModal();
 });
 When('I add three subject selection',()=>{
-    adminSection.addsubjectselectOption();
+    adminSection.addSubjectSelectOption();
 });
 When('I choose a year and section',()=>{
-    adminSection.selectyearSection();
+    adminSection.selectYearSection();
 });
 When('I select subjects',()=>{
     adminSection.selectSubject();
@@ -34,24 +34,24 @@ When('I select course',()=>{
     adminSection.selectCourse();
 });
 When('I entered maximum numbers',()=>{
-    adminSection.entermaxstudentNumber();
+    adminSection.enterMaxStudentNumber();
 });
 When('I choose start and end date of section to be available in enrollment',()=>{
-    adminSection.start_end();
+    adminSection.sectionStartEnd();
 });
 When('I click ADD SECTION button',()=>{
-    adminSection.addsectionButton();
+    adminSection.addSectionButton();
 });
 Then('the section should be created successfully',()=>{
-    adminSection.assertsectionCreated();
+    adminSection.assertSectionIsCreated();
 });
 
 //edit
 When('I click the Edit section data',()=>{
-    adminSection.editsectionModal();
+    adminSection.editSectionModal();
 });
 When('I entered a new data',()=>{
-    adminSection.entersectionNewdata();
+    adminSection.enterSectionNewData();
 });
 When('I click update section button',()=>{
     adminSection.goEditButton();
@@ -62,18 +62,18 @@ When('I refresh the page',()=>{
 });
 
 Then('I should see that the section is updated with the data I entered',()=>{
-    adminSection.assertnewsectionData();
+    adminSection.assertNewSectionData();
 });
 
 //open the View Student List page of that section
 Given('there is existing section',()=>{
-    adminSection.assertExistingsection();
+    adminSection.assertExistingSection();
 });
 When('I click the View Student List link of the existing section',()=>{
-    adminSection.viewstudentLink();
+    adminSection.viewStudentLink();
 });
 Then('I should be navigated to View Student list page of that section',()=>{
-    adminSection.assertviewstudentPage();
+    adminSection.assertViewStudentPage();
 });
 
 //open the Assign Teachers page of that section
@@ -81,13 +81,13 @@ When('I click the Assign Teachers link of that section',()=>{
     adminSection.navigateToAssignTeacherPage();
 });
 Then('I should be navigated to Assign Teachers page of that section',()=>{
-    adminSection.assertassignteacherPage();
+    adminSection.assertAssignTeacherPage();
 });
 
 //odelete the section
 When('I click the delete button of that section',()=>{
-    adminSection.deletesectionButton();
+    adminSection.deleteSectionButton();
 });
 Then('the section should be deleted',()=>{
-    adminSection.assertsectionDeleted();
+    adminSection.assertSectionIsDeleted();
 });

@@ -25,10 +25,10 @@ Given('I navigate to VIEW STUDENT > Add Student',()=>{
 });
 
 When('I enter the details of student',()=>{
-    adminstudent.enterstudentDetails();
+    adminstudent.enterStudentDetails();
 });
 When('I click the create button',()=>{
-    adminstudent.addstudentButton();
+    adminstudent.addStudentButton();
 });
 Then('the account should be created successfully',()=>{
     globalobject.assertText('Admin Contact #','visible');
@@ -45,7 +45,7 @@ Given('I click the Edit Data button',()=>{
     globalobject.clickButton(school.editButton,'!text');
 });
 When('I entered new data of the student',()=>{
-    adminstudent.newdatastudent();
+    adminstudent.newDataStudent();
 });
 When('I click the update button',()=>{
     globalobject.clickButton(school.submiteditButton,'!text');
