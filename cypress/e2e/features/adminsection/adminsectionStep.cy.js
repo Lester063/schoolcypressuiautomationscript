@@ -16,7 +16,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 //create
 Given('I navigated to VIEW SECTIONS',()=>{
-    globalobject.clickButton(school.navbarlink.viewSection,'text');
+    globalobject.clickButton(school.navbarLink.viewSection,'text');
 });
 Given('I click the Add Section button',()=>{
     adminSection.openAddSectionModal();

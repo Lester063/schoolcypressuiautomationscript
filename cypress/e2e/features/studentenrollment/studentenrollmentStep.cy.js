@@ -10,6 +10,8 @@ const studentenrollmentPO= new studentEnrollmentPO();
 const enrolled = new adminenrolledPO()
 const login=new loginPO();
 const adminSection = new adminsectionPO();
+var isPasswordChanged = false;
+var newUserPassword;
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
@@ -22,10 +24,14 @@ Given('today is the enrollment day',()=>{
     studentenrollmentPO.thereIsSection();
 });
 Given('I am logged in as a Student',()=>{
-    login.loginUser('Student', 't.student241@school.com', 'qwerty123')
+    var password = 'qwerty123';
+    if(isPasswordChanged) {
+        password = newUserPassword;
+    }
+    login.loginUser('Student', 't.student241@school.com', password);
 });
 When('I navigate to ENROLLMENT Page',()=>{
-    cy.contains(school.studentnavbar.enrollment).click();
+    cy.contains(school.studentNavbar.enrollment).click();
 });
 When('I choose a section',()=>{
     studentenrollmentPO.selectSection();
@@ -38,7 +44,7 @@ Then('I should see a success message that I enrolled successfully',()=>{
 });
 Then('I delete the section to clear the section table',()=>{
     login.loginUser('Admin', 'admin@school.com', 'qwerty123');
-    cy.contains(school.navbarlink.viewSection).click();
+    cy.contains(school.navbarLink.viewSection).click();
     adminSection.deleteSectionButton();
 });
 
@@ -109,8 +115,10 @@ Given('I am logged in as a Student',()=>{
 Given('I navigate to PROFILE > PASSWORD',()=>{
     studentenrollmentPO.goToPassword();
 });
-When('I entered my old and new password, {string} {string} {string}',(oldPassword, newPassword, verifyPassword)=>{
+When('I entered my old and new password, {string} {string} {string}',async(oldPassword, newPassword, verifyPassword)=>{
     studentenrollmentPO.changePassword(oldPassword, newPassword, verifyPassword);
+    isPasswordChanged = true;
+    newUserPassword = newPassword;
 });
 When('I click Change Password button',()=>{
     studentenrollmentPO.clickChangePassword();

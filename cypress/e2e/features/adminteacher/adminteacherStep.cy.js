@@ -17,10 +17,10 @@ Given('I logged in as an Admin',()=>{
 });
 */
 When('I click the VIEW TEACHERS in sidebar',()=>{
-    globalobject.clickButton(school.navbarlink.viewTeacher,'text');
+    globalobject.clickButton(school.navbarLink.viewTeacher,'text');
 });
 Then('I should be navigated to view teachers page successfully',()=>{
-    globalobject.assertText(school.navbarlink.viewTeacher, 'visible');
+    globalobject.assertText(school.navbarLink.viewTeacher, 'visible');
 });
 
 //create teacher
@@ -39,13 +39,13 @@ Then('the teacher account should be created successfully',()=>{
 
 //update teacher
 When('I navigated to VIEW TEACHERS page',()=>{
-    globalobject.clickButton(school.navbarlink.viewTeacher,'text');
+    globalobject.clickButton(school.navbarLink.viewTeacher,'text');
 })
 When('I search the teacher',()=>{
     globalobject.search(school.searchTeacher,'Forthepractice');
 });
 When('I click the Edit Data button for teacher',()=>{
-    globalobject.clickButton(school.teachereditButton,'!text');
+    globalobject.clickButton(school.teacherEditButton,'!text');
 });
 When('I entered the new data',()=>{
     adminteacher.newTeacherDetails();
@@ -54,7 +54,7 @@ When('I click the update teacher button',()=>{
     globalobject.clickButton(school.editTeacherSubmit,'!text');
 });
 When('I close the update modal box',()=>{
-    globalobject.clickButton(school.modalcloseButton,'!text');
+    globalobject.clickButton(school.modalCloseButton,'!text');
 });
 Then('the data should be updated successfully',()=>{
     globalobject.assertText('Forthepracticeupdate','visible');

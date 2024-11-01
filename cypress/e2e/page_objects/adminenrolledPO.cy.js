@@ -8,7 +8,7 @@ class Enrolled{
     thereIsEnrolledstudent(){
         login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     
-        cy.contains(school.navbarlink.viewSection,{timeout:300}).click();
+        cy.contains(school.navbarLink.viewSection,{timeout:300}).click();
         adminSection.openAddSectionModal();
         adminSection.addSubjectSelectOption();
         adminSection.selectYearSection();
@@ -25,13 +25,13 @@ class Enrolled{
     
         login.loginUser('Student', 't.student241@school.com', 'qwerty123');
     
-        cy.contains(school.studentnavbar.enrollment,{timeout:300}).click({force:true});
+        cy.contains(school.studentNavbar.enrollment,{timeout:300}).click({force:true});
         cy.get(school.clickSection,{timeout:300}).eq(0).click();
     
         cy.get(school.clickEnrollbutton,{timeout:300}).click();
     }
     viewEnrolledPage(){
-        cy.contains(school.navbarlink.viewEnrolled,{timeout:300}).click();
+        cy.contains(school.navbarLink.viewEnrolled,{timeout:300}).click();
     }
     clickPendingTab(){
         cy.contains(school.textPending,{timeout:300}).click();
@@ -55,7 +55,7 @@ class Enrolled{
     }
     dropSubject(){
         for(var x=0;x<=1;x++){
-            cy.get(school.redblackButton,{scrollBehavior: false,force:true}).eq(x).click();
+            cy.get(school.redBlackButton,{scrollBehavior: false,force:true}).eq(x).click();
         }
         
     }
@@ -67,12 +67,12 @@ class Enrolled{
     //add back the subject
     addAgainSubject(){
         for(var y=0;y<=1;y++){
-            cy.get(school.bluewhiteButton,{scrollBehavior: false,force:true}).eq(y).click();
+            cy.get(school.blueWhiteButton,{scrollBehavior: false,force:true}).eq(y).click();
         }
     }
     assertAddBackSubject(){
         cy.reload();
-        cy.get(school.redblackButton).last().should('be.visible');
+        cy.get(school.redBlackButton).last().should('be.visible');
     }
 }
 

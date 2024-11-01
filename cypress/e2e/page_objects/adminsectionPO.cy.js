@@ -6,37 +6,37 @@ subjects = ['null','10','12'];//id's of subject
 class Section{
     //till assertSectionIsCreated -line 41 ==create section
     openAddSectionModal(){
-        globalobject.clickButton(school.addsectionmodalTrigger,'!text');
+        globalobject.clickButton(school.addSectionModalTrigger,'!text');
     }
     addSubjectSelectOption(){
         //adjust numbers depends on your need
         for(var i=0;i<1;i++){
-            globalobject.clickButton(school.addselectSection,'!text');
+            globalobject.clickButton(school.addSelectSection,'!text');
         }
     }
     selectYearSection(){
-        globalobject.selectOption(school.gradeyear,0,'11');
+        globalobject.selectOption(school.gradeYear,0,'11');
         globalobject.selectOption(school.section,0,'A');
     }
     selectSubject(){
         for(var xy=1;xy<=2;xy++){
-            globalobject.selectOption(school.selectsubject,xy,subjects[xy]);
+            globalobject.selectOption(school.selectSubject,xy,subjects[xy]);
        }
     }
     selectCourse(){
-        globalobject.selectOption(school.selectcourse,0,'ICT');
+        globalobject.selectOption(school.selectCourse,0,'ICT');
     }
     enterMaxStudentNumber(){
-        cy.get(school.maxstudentSection).type('3');
+        cy.get(school.maxStudentSection).type('3');
     }
     sectionStartEnd(){
         var today = moment().format("YYYY-MM-DDThh:mm");
         var tom = moment(today).add(5, 'days').format("YYYY-MM-DDThh:mm");
-        cy.get(school.start_date).type(today);
-        cy.get(school.end_date).type(tom);
+        cy.get(school.startDate).type(today);
+        cy.get(school.endDate).type(tom);
     }
     addSectionButton(){
-        globalobject.clickButton(school.addsectionButton,'!text', {timeout:300});
+        globalobject.clickButton(school.addSectionButton,'!text', {timeout:300});
     }
     assertSectionIsCreated(){
         globalobject.assertText('Created Section Successfully.','visible');
@@ -45,10 +45,10 @@ class Section{
 
     //update the maximum numbers into 5
     editSectionModal(){
-        cy.get(school.editsectionbutton,{timeout:300}).click();
+        cy.get(school.editSectionButton,{timeout:300}).click();
     }
     enterSectionNewData(){
-        cy.get(school.editsectionQty,{timeout:300}).clear().type('5');
+        cy.get(school.editSectionQty,{timeout:300}).clear().type('5');
     }
     goEditButton(){
         cy.contains('UPDATE',{timeout:300}).click();
@@ -84,7 +84,7 @@ class Section{
         cy.get(school.selectTeacher,{timeout:300}).eq(1).select('10');
     }
     clickAssignButton() {
-        cy.get(school.assignteacherButton,{timeout:300}).click();
+        cy.get(school.assignTeacherButton,{timeout:300}).click();
     }
 
     assertAssignTeacherPage(){

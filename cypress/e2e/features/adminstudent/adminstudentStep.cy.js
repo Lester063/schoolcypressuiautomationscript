@@ -20,7 +20,7 @@ Given('I am logged in as an Admin',()=>{
 });
 
 Given('I navigate to VIEW STUDENT > Add Student',()=>{
-    adminstudent.gotoPage(school.navbarlink.viewStudent);
+    adminstudent.gotoPage(school.navbarLink.viewStudent);
     globalobject.clickButton(school.addStudent,'text')
 });
 
@@ -48,7 +48,7 @@ When('I entered new data of the student',()=>{
     adminstudent.newDataStudent();
 });
 When('I click the update button',()=>{
-    globalobject.clickButton(school.submiteditButton,'!text');
+    globalobject.clickButton(school.submitEditButton,'!text');
 });
 
 Then('the student data should be update successfully',()=>{

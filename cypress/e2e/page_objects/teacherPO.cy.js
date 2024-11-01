@@ -3,7 +3,7 @@ import { school } from "../../../schoolpageobject.js";
 let studentName=['Student, Test1'];
 class Teacher{
     goToMyAdvisoryPage(){
-        cy.contains(school.teachernavbar.myAdvisory).click();
+        cy.contains(school.teacherNavbar.myAdvisory).click();
     }
     viewAdvisoryStudent(){
         cy.get(school.viewAdvisoryStudentList).eq(0).click();
@@ -14,7 +14,7 @@ class Teacher{
         }
     }
     goToSectionHandlePage(){
-        cy.contains(school.teachernavbar.sectionHandle).click();
+        cy.contains(school.teacherNavbar.sectionHandle).click();
     }
     viewSectionHandleStudent(){
         cy.get(school.viewSectionHandleList,{timeout:300}).click();

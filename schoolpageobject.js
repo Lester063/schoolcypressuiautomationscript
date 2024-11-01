@@ -4,18 +4,18 @@ export const school = {
     inputUsername:".inputUsername",
     inputPassword:".inputPassword",
     loginButton:".login-submitButton",
-    studentnavbar:{
+    studentNavbar:{
         enrollment:"ENROLLMENT",
         viewRegistration:"MY REGISTRATION",
         viewGrades:"GRADES",
         profile:"PROFILE", viewProfile:"VIEW PROFILE", password:"PASSWORD",
     },
-    teachernavbar:{
+    teacherNavbar:{
         myAdvisory:"MY ADVISORY",
         sectionHandle:"Section Handle",
     },
 
-    navbarlink:{
+    navbarLink:{
         viewStudent:"VIEW STUDENTS",
         viewTeacher:"VIEW TEACHERS", addTeacher:"Add Teacher",
         subjectCourse:"SUBJECT/COURSE",
@@ -26,18 +26,18 @@ export const school = {
         addNews:"ADD NEWS"
     },
     //planning to make it global
-    modalcloseButton:".closebutton-addstudent",
+    modalCloseButton:".closebutton-addstudent",
     activatedText:"ACTIVATED",
     deactivatedText:"DEACTIVATED",
     deleteText:"Delete",
-    redblackButton:".redblackButton",
-    bluewhiteButton:".bluewhiteButton",
+    redBlackButton:".redblackButton",
+    blueWhiteButton:".bluewhiteButton",
     //adminstudent
     addStudent:"Add Student",
     addButton:"#addbutton",//this is the create button
     searchField:"#searchStudent",
     editButton:".editbutton",
-    submiteditButton:"#submitbutton-editstudent",
+    submitEditButton:"#submitbutton-editstudent",
         //student details
         firstName:"#firstname",
         middleName:"#middlename",
@@ -46,39 +46,39 @@ export const school = {
         contactNumber:"#contact_number",
         year:"#year",
         //new data of student for updating
-        newfirstname:"#put_firstname",
-        newlastname:"#put_lastname",
+        newFirstName:"#put_firstname",
+        newLastName:"#put_lastname",
 
     //adminsubjectcourse.cy.js   --new subject
     newSubject:"#newSubject",
     subjectCode:"#subjectCode",
     subjectDescription:"#description",
     //details of subject we will add
-    newsubjectInput:"this is new",
-    subjectcodeInput:"code", 
-    subjectdescriptionInput:"description",
+    newSubjectInput:"this is new",
+    subjectCodeInput:"code", 
+    subjectDescriptionInput:"description",
     //the button that will submit the data
-    addsubjectButton:"#addSubject_button",
+    addSubjectButton:"#addSubject_button",
 
     //adminsubjectcourse.cy.js  --new course
     newCourse:"#newCourse",
     courseDescription:"#courseDescription",
     //details of course we will add
-    newcourseInput:"new course to",
-    coursedescriptionInput:"this is the description",
+    newCourseInput:"new course to",
+    courseDescriptionInput:"this is the description",
 
     //adminsection.cy.js
-    addsectionmodalTrigger:".addSection",
-    addselectSection:'input[onclick="addselectSection()"]',
-    gradeyear:"#grade_year",
+    addSectionModalTrigger:".addSection",
+    addSelectSection:'input[onclick="addselectSection()"]',
+    gradeYear:"#grade_year",
     section:"#section",
 
-    selectsubject:".addsection_select",
-    selectcourse:'#section_course',
-    maxstudentSection:"#max_qty",
-    start_date:"#start_date",
-    end_date:"#end_date",
-    addsectionButton:"#addsectionbutton",
+    selectSubject:".addsection_select",
+    selectCourse:'#section_course',
+    maxStudentSection:"#max_qty",
+    startDate:"#start_date",
+    endDate:"#end_date",
+    addSectionButton:"#addsectionbutton",
 
 
     //adminteacher
@@ -92,22 +92,22 @@ export const school = {
     //searchTeacher
     searchTeacher:"#searchTeacher",
     //when editing teacher details -only the last name
-    teacherlastnameEdit:"#put_teacher_lastname",
-    teacheraddButton:"#addTeacher",
-    teachereditButton:".editteacher",
+    teacherLastNameEdit:"#put_teacher_lastname",
+    teacherAddButton:"#addTeacher",
+    teacherEditButton:".editteacher",
     editTeacherSubmit:"#submitbutton-editteacher",
     deleteTeacherButton:".deletebutton",
     // ---kulang yung teacher
 
 
     //adminsection
-    editsectionbutton:".editsectionbutton",
-    editsectionQty:"#editsection_qty",
+    editSectionButton:".editsectionbutton",
+    editSectionQty:"#editsection_qty",
     goEditButton:".bluewhiteButton",
 
     selectAdviser:"[name='adviser_id']",
     selectTeacher:"[name='teacher[]']",
-    assignteacherButton:"#new_assignTeachers > .bluewhiteButton",
+    assignTeacherButton:"#new_assignTeachers > .bluewhiteButton",
 
     viewStudentLink:'a[href*="viewenrolledList.php?section_id"]',
     viewSectionEnrolledPage:'ADMIN: ENROLL STUDENTS',
@@ -126,22 +126,14 @@ export const school = {
     textApproved:"APPROVED",
     approveStudent:".approved",
 
-
     //student page
-    //student login page
-    inputstudentEmail:"#studentEmail",
-    inputstudentPassword:"#studentPassword",
-    selectsection:"#section_id",
-    enrollbutton:"#enrollbutton",
+    selectSection:"#section_id",
     enrollmentMessage:"#enrollment-message",
 
     //viewregistration
     registrationToggle:".syTitle",
 
-
     //teacher
-    teacherEmail:"#teacherEmail",
-    teacherPassword:"#teacherPassword",
     viewAdvisoryStudentList:'a[href="viewList.php?schoolyear_assign=2023-2024"]',
     // * == all with sectionhandlestudentblade.php?Section_id
     viewSectionHandleList:'a[href*="sectionhandlestudentblade.php?section_id"]',

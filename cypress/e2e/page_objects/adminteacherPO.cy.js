@@ -3,8 +3,8 @@ class Adminteacher{
     
     //create teacher
     createTeacherPage(){
-        cy.contains(school.navbarlink.viewTeacher,{timeout:300}).click();
-        cy.contains(school.navbarlink.addTeacher,{timeout:300}).click();
+        cy.contains(school.navbarLink.viewTeacher,{timeout:300}).click();
+        cy.contains(school.navbarLink.addTeacher,{timeout:300}).click();
     }
     enterTeacherDetails(){
         cy.get(school.teacherFirstname,{timeout:300}).type('Forthetest');
@@ -16,11 +16,11 @@ class Adminteacher{
         cy.get(school.teacherRank,{timeout:300}).select('teacher1');
     }
     addTeacherButton(){
-        cy.get(school.teacheraddButton,{timeout:300}).click();
+        cy.get(school.teacherAddButton,{timeout:300}).click();
     }
     //edit -the data
     newTeacherDetails(){
-        cy.get(school.teacherlastnameEdit,{timeout:300}).clear().type('Forthepracticeupdate');
+        cy.get(school.teacherLastNameEdit,{timeout:300}).clear().type('Forthepracticeupdate');
     }
 }
 
