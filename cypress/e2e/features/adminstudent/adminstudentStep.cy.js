@@ -15,10 +15,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
 
 Given('I am logged in as an Admin',()=>{
-    login.navigateToAdminLoginPage();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
+    login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     globalobject.assertText('Admin','visible');
 });
 

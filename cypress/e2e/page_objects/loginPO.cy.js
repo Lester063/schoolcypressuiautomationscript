@@ -1,21 +1,44 @@
 import { school } from "../../../schoolpageobject.js";
 
 class Login{
-    navigateToAdminLoginPage(){
-        cy.visit('http://localhost/school/login/loginadmin.php');
+    navigateToAdminLoginPage(urlPage){
+        cy.visit(urlPage);
     }
-    getUsername(){
-        cy.get(school.studentUsername,{timeout:300}).type('admin@school.com');
+    inputEmail(email){
+        cy.get(school.inputUsername,{timeout:300}).type(email);
     }
-    getPassword(){
-        cy.get(school.studentPassword,{timeout:300}).type('qwerty123');
+    inputPassword(password){
+        cy.get(school.inputPassword,{timeout:300}).type(password);
     }
-    loginbuttonClick(){
-        cy.get(school.studentloginButton,{wait:3000}).click();
+    loginButtonClick(){
+        cy.get(school.loginButton,{wait:3000}).click();
     }
-    assertLogin(){
-        cy.url().should('eq', 'http://localhost/school/admin/adminPage/adminpage.php')
+    assertLogin(urlToAssert){
+        cy.url().should('eq', urlToAssert);
     }
+
+    loginUser(userlevel, email, password){
+        cy.clearCookies();
+        cy.clearLocalStorage();
+        var urlPage = '';
+        if(userlevel === 'Admin') {
+            urlPage = 'http://localhost/school/login/loginadmin.php';
+        }
+        else if (userlevel === 'Teacher') {
+            urlPage = 'http://localhost/school/login/loginteacher.php';
+        }
+        else if (userlevel === 'Student') {
+            urlPage = 'http://localhost/school/login/loginpage.php';
+        }
+        else {
+            cy.log('Incorrect Userlevel.');
+        }
+        this.navigateToAdminLoginPage(urlPage);
+        this.inputEmail(email);
+        this.inputPassword(password);
+        this.loginButtonClick();
+    }
+
 }
 
 export default Login

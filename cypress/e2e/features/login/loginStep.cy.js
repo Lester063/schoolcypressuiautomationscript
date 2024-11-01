@@ -7,17 +7,17 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
   })
-
-Given('I am on the login page',()=>{
-    login.navigateToAdminLoginPage();
+//admin
+Given('I am on the login page, {string}',async(urlPage)=>{
+    login.navigateToAdminLoginPage(urlPage);
 });
-When('I entered my valid credentials',()=>{
-    login.getUsername();
-    login.getPassword();
+When('I entered my valid credentials, {string} {string}',async(email, password)=>{
+    login.inputEmail(email);
+    login.inputPassword(password);
 });
 When('I click the login button',()=>{
-    login.loginbuttonClick();
+    login.loginButtonClick();
 });
-Then('I should be navigated to the dashboard',()=>{
-    login.assertLogin();
+Then('I should be navigated to the dashboard, {string}',async(redirectedLink)=>{
+    login.assertLogin(redirectedLink);
 })
