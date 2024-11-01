@@ -22,7 +22,7 @@ Given('today is the enrollment day',()=>{
     studentenrollmentPO.thereIsSection();
 });
 Given('I am logged in as a Student',()=>{
-    studentenrollmentPO.loginStudent();
+    login.loginUser('Student', 't.student241@school.com', 'qwerty123')
 });
 When('I navigate to ENROLLMENT Page',()=>{
     cy.contains(school.studentnavbar.enrollment).click();

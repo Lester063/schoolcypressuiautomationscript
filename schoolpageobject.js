@@ -1,6 +1,4 @@
 export const school = {
-    studentpageUrl:"http://localhost/school/login/loginpage.php",
-    adminpageUrl: "http://localhost/school/admin/adminPage/adminpage.php",
     qwerty123:"qwerty123",
     //student logged in
     inputUsername:".inputUsername",
