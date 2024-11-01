@@ -20,39 +20,42 @@ class StudentEnrollment{
         adminSection.sectionStartEnd();
         adminSection.addSectionButton();
     }
-    loginStudent(){
-        cy.visit('http://localhost/school/login/loginpage.php');
-        cy.get(school.inputstudentEmail).type('t.student241@school.com').click({force:true});
-        cy.get(school.inputstudentPassword).type(school.qwerty123).click({force:true});
-        cy.get('.login-submitButton').click({force:true});
-    }
+
     selectSection(){
         cy.get(school.selectsection).click();
     }
+
     clickEnrollbutton(){
         cy.get(school.enrollbutton).click();
     }
+
     assertEnroll(){
         cy.get(school.enrollmentMessage).should('contain', 'Success!');
     }
+
     goToMyRegistrationPage(){
         cy.contains(school.studentnavbar.viewRegistration).click();
     }
+
     openRegistration(){
         cy.get(school.registrationToggle).click();
     }
+
     assertRegisteredSubject(){
         cy.wrap(subjects).each((ele)=>
             cy.contains(ele).should('be.visible')
         );
     }
+
     goToGrades(){
         cy.contains(school.studentnavbar.viewGrades).should('be.visible').click({force:true});
     }
+
     goToProfileInfo(){
         cy.contains(school.studentnavbar.profile,{timeout:300}).click();
         cy.contains(school.studentnavbar.viewProfile).should('be.visible').click({force:true});
     }
+
     assertProfile(){
         cy.wrap(profile).each((el)=>cy.contains(el).should('be.visible'))
     }
@@ -61,6 +64,7 @@ class StudentEnrollment{
         cy.contains(school.studentnavbar.profile,{timeout:300}).click({force:true});
         cy.contains(school.studentnavbar.password).should('be.visible').click({force:true});
     }
+
     changePassword(oldPassword,newPassword,verifyPassword){
         cy.get(school.oldPassword).clear().type(oldPassword);
         cy.get(school.newPassword).clear().type(newPassword);
@@ -68,9 +72,11 @@ class StudentEnrollment{
         school.qwerty123 = verifyPassword;
 
     }
+
     clickChangePassword(){
         cy.get(school.changePassword).click({force:true});
     }
+    
     assertChangedPassword(){
         //cy.contains('Changed Password Successfully').should('be.visible');
     }
