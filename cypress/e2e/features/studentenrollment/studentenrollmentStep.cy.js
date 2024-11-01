@@ -37,10 +37,7 @@ Then('I should see a success message that I enrolled successfully',()=>{
     studentenrollmentPO.assertEnroll();
 });
 Then('I delete the section to clear the section table',()=>{
-    login.navigateToAdminLoginPage();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
+    login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     cy.contains(school.navbarlink.viewSection).click();
     adminSection.deletesectionButton();
 });
@@ -49,10 +46,7 @@ Then('I delete the section to clear the section table',()=>{
 Given('I already enrolled',()=>{
     enrolled.thereisEnrolledstudent();
     //login admin
-    login.navigateToAdminLoginPage();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
+    login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     //view enrolled
     enrolled.viewenrolledPage();
     //pending

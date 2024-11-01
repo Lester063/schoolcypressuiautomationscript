@@ -3,9 +3,9 @@ export const school = {
     adminpageUrl: "http://localhost/school/admin/adminPage/adminpage.php",
     qwerty123:"qwerty123",
     //student logged in
-    studentUsername:".inputUsername",
-    studentPassword:".inputPassword",
-    studentloginButton:".login-submitButton",
+    inputUsername:".inputUsername",
+    inputPassword:".inputPassword",
+    loginButton:".login-submitButton",
     studentnavbar:{
         enrollment:"ENROLLMENT",
         viewRegistration:"MY REGISTRATION",
@@ -144,7 +144,7 @@ export const school = {
     //teacher
     teacherEmail:"#teacherEmail",
     teacherPassword:"#teacherPassword",
-    viewAdvisoryStudentList:'a[href="viewList.php?schoolyear_assign=2022-2023"]',
+    viewAdvisoryStudentList:'a[href="viewList.php?schoolyear_assign=2023-2024"]',
     // * == all with sectionhandlestudentblade.php?Section_id
     viewSectionHandleList:'a[href*="sectionhandlestudentblade.php?section_id"]',
 

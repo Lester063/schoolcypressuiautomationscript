@@ -8,10 +8,7 @@ let subjects=['ICT MAJOR', 'Math'];
 let profile=['Test1 Student', 't.student241@school.com'];
 class StudentEnrollment{
     thereisSection(){
-        login.navigateToAdminLoginPage();
-        login.getUsername();
-        login.getPassword();
-        login.loginbuttonClick();
+        login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     
         cy.contains(school.navbarlink.viewSection,{timeout:300}).click();
         adminSection.openaddsectionModal();

@@ -14,7 +14,7 @@ Given('I am assigned to a section as an Adviser',()=>{
     enrolled.thereisEnrolledstudent();
 });
 Given('I am logged in as a Teacher',()=>{
-    teacher.loginTeacher();
+    login.loginUser('Teacher', 'test1teacher1@school.com', 'qwerty123');
 });
 When('I Navigate to My advisory',()=>{
     teacher.gotoMyAdvisoryPage();
@@ -36,19 +36,15 @@ Given('I am assigned to a section as a subject teacher',()=>{
     enrolled.thereisEnrolledstudent();
 
     //login admin
-    login.navigateToAdminLoginPage();
-    login.getUsername();
-    login.getPassword();
-    login.loginbuttonClick();
+    login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     //accept student
     enrolled.viewenrolledPage();
     enrolled.clickPendingtab();
     enrolled.clickPendingstudent();
-    login.logOut();
 });
 /*
 Given('I am logged in as a Teacher',()=>{
-    teacher.loginTeacher();
+
 });
 */
 When('I Navigate to Section Handle page',()=>{

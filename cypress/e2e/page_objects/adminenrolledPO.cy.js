@@ -6,10 +6,7 @@ const login=new loginPO();
 const adminSection = new adminsectionPO();
 class Enrolled{
     thereisEnrolledstudent(){
-        login.navigateToAdminLoginPage();
-        login.getUsername();
-        login.getPassword();
-        login.loginbuttonClick();
+        login.loginUser('Admin', 'admin@school.com', 'qwerty123');
     
         cy.contains(school.navbarlink.viewSection,{timeout:300}).click();
         adminSection.openaddsectionModal();
@@ -26,10 +23,7 @@ class Enrolled{
         adminSection.assignTeachers();
         adminSection.clickAssignButton();
     
-        cy.visit(school.studentpageUrl);
-        cy.get(school.studentUsername,{timeout:300}).type('t.student241@school.com');
-        cy.get(school.studentPassword,{timeout:300}).type('qwerty123');
-        cy.get(school.studentloginButton,{timeout:3000}).click();
+        login.loginUser('Student', 't.student241@school.com', 'qwerty123');
     
         cy.contains(school.studentnavbar.enrollment,{timeout:300}).click({force:true});
         cy.get(school.clickSection,{timeout:300}).eq(0).click();
